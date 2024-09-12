@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-image: url('image4.JPG');
+      background-image: url('image34.JPG');
       background-size: cover;
       background-position: center;
       overflow: hidden;
@@ -95,7 +95,7 @@
       color: white;
       border: none;
       border-radius: 4px;
-      padding: 10px;
+      padding: 10px 20px;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -104,7 +104,7 @@
     }
 
     .search-button i {
-      margin: 0;
+      margin-right: 8px; /* Adds space between icon and text */
     }
 
     .search-button:hover {
@@ -330,6 +330,28 @@
       text-align: center;
       margin-top: 20px;
     }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      padding: 15px 20px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #09f;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body>
@@ -351,7 +373,7 @@
         <option value="3">Chandigarh</option>
       </select>
       <input type="text" placeholder="Enter text here">
-      <button class="search-button"><i class="fas fa-search"></i></button>
+      <button class="search-button"><i class="fas fa-search"></i> Search</button>
     </div>
   </div>
 
@@ -381,6 +403,10 @@
   <div class="toggle-container">
     <button class="toggle-btn" onclick="toggleFont()" id="fontToggleButton">Toggle Font</button>
   </div>
+
+  <footer>
+    <p>&copy; 2024 Voyager. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
 
   <script>
     function toggleFont() {
