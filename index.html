@@ -3,44 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voyager Wallpaper with Font Toggle</title>
+  <title>Voyager - Making Dream Work</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-image: url('image4.JPG'); /* Replace 'image4.JPG' with your wallpaper */
+      background-image: url('image4.JPG');
       background-size: cover;
       background-position: center;
       overflow: hidden;
-      font-family: Arial, sans-serif; /* Default font */
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .login-container {
-      position: fixed;
-      top: 65%;
-      left: 83%;
-      width: 28%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 20px;
-      border-radius: 10px;
-      z-index: 999;
-      text-align: center;
+    header {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
     }
 
-    .login-container input {
-      display: block;
-      width: 95%;
-      margin: 10px 0;
-      padding: 10px;
-      border: 1px solid #ddd;
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    header nav a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #555;
       border-radius: 5px;
-      font-family: inherit; /* Use the font-family of the body */
+      transition: background-color 0.3s;
     }
 
-    .login-container input[type="password"] {
-      margin-bottom: 20px;
+    header nav a:hover {
+      background-color: #777;
+    }
+
+    .center-content {
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 998;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+    }
+
+    select, input[type="text"] {
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    select {
+      background: #fff;
+      flex: 1;
+    }
+
+    input[type="text"] {
+      background: #fafafa;
+      flex: 2;
+    }
+
+    .search-button {
+      background-color: #0866ff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .search-button i {
+      margin: 0;
+    }
+
+    .search-button:hover {
+      background-color: #0659c1;
     }
 
     .forget-password {
@@ -56,7 +124,7 @@
     }
 
     .bug-button {
-      background-color: #fff;
+      background-color: orange;
       padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
@@ -66,17 +134,17 @@
     }
 
     .bug-button:hover {
-      background-color: #ddd;
+      background-color: darkorange;
     }
 
     .bug-button a {
       text-decoration: none;
-      color: #333;
+      color: #fff;
     }
 
     .toggle-container {
       position: fixed;
-      top: 20px;
+      top: 150px;
       right: 20px;
       z-index: 999;
     }
@@ -141,15 +209,172 @@
       margin-top: 10px;
       display: block;
     }
+
+    .popup {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1200;
+    }
+
+    .popup-content {
+      margin-bottom: 15px;
+      display: flex;
+      width: 60%;
+      width: 700px;
+      height: 400px;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .popup-grey {
+      background-color: #eee;
+      width: 33.33%;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    .popup-grey .icon {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .popup-grey ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .popup-grey ul li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .popup-grey ul li i {
+      color: #0866ff;
+      margin-right: 10px;
+    }
+
+    .popup-white {
+      text-align: center;
+      background-color: #fff;
+      width: 66.67%;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .popup-content .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .popup-white p {
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .popup-content form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    .popup-content input {
+      width: 150%;
+      padding: 12px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .popup-content button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: orange;
+      color: white;
+      cursor: pointer;
+      width: 80%;
+      text-align: center;
+    }
+    .popup-content button:hover {
+      background-color: darkorange;
+    }
+
+    .sample-text {
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <input type="text" placeholder="Enter email address or phone number">
-    <input type="password" placeholder="Password">
-    <a href="forgot_password.html" class="forget-password">Forget Password?</a>
-    <div class="bug-button">
-      <a href="second_webpage.html">Log In Button</a>
+
+  <header>
+    <img src="logo2.png" alt="Your Logo" style="height: 50px;">
+    <nav>
+      <a href="#" id="loginLink">Login</a>
+      <a href="#">Signup</a>
+    </nav>
+  </header>
+
+  <div class="center-content">
+    <div class="form-container">
+      <select>
+        <option value="" disabled selected>Select an option</option>
+        <option value="1">Bangalore</option>
+        <option value="2">Delhi</option>
+        <option value="3">Chandigarh</option>
+      </select>
+      <input type="text" placeholder="Enter text here">
+      <button class="search-button"><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+
+  <div id="loginPopup" class="popup">
+    <div class="popup-content">
+      <div class="popup-grey">
+        <i class="fas fa-home icon"></i>
+        <ul>
+          <li><i class="fas fa-check"></i> Zero brokerage</li>
+          <li><i class="fas fa-check"></i> Thousands of new listings daily</li>
+          <li><i class="fas fa-check"></i> 100 Cr+ brokerage saved</li>
+        </ul>
+      </div>
+      <div class="popup-white">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <h1>Log In</h1>
+        <p><strong>Enter e-mail to continue</strong></p>
+        <form id="loginForm">
+          <input type="email" id="email" name="email" placeholder="Enter email here..." required>
+          <button type="button" id="loginButton">Login</button>
+        </form>
+        <p class="sample-text">By continuing, you agree to our terms and conditions.</p>
+      </div>
     </div>
   </div>
 
@@ -160,40 +385,40 @@
   <script>
     function toggleFont() {
       var currentFont = localStorage.getItem("selectedFont");
-
+    
       if (currentFont === "Arial, sans-serif") {
         document.body.style.fontFamily = "Times New Roman, serif";
-        document.querySelectorAll('.login-container input').forEach(input => {
+        document.querySelectorAll('input[type="text"], select').forEach(input => {
           input.style.fontFamily = "Times New Roman, serif";
         });
         localStorage.setItem("selectedFont", "Times New Roman, serif");
       } else if (currentFont === "Times New Roman, serif") {
         document.body.style.fontFamily = "Helvetica, sans-serif";
-        document.querySelectorAll('.login-container input').forEach(input => {
+        document.querySelectorAll('input[type="text"], select').forEach(input => {
           input.style.fontFamily = "Helvetica, sans-serif";
         });
         localStorage.setItem("selectedFont", "Helvetica, sans-serif");
       } else if (currentFont === "Helvetica, sans-serif") {
         document.body.style.fontFamily = "Chiller, cursive";
-        document.querySelectorAll('.login-container input').forEach(input => {
+        document.querySelectorAll('input[type="text"], select').forEach(input => {
           input.style.fontFamily = "Chiller, cursive";
         });
         localStorage.setItem("selectedFont", "Chiller, cursive");
       } else {
         document.body.style.fontFamily = "Arial, sans-serif";
-        document.querySelectorAll('.login-container input').forEach(input => {
+        document.querySelectorAll('input[type="text"], select').forEach(input => {
           input.style.fontFamily = "Arial, sans-serif";
         });
         localStorage.setItem("selectedFont", "Arial, sans-serif");
       }
-
+    
       updateButtonText();
     }
-
+    
     function updateButtonText() {
       var currentFont = localStorage.getItem("selectedFont");
       var button = document.getElementById("fontToggleButton");
-
+    
       switch(currentFont) {
         case "Arial, sans-serif":
           button.innerText = "Arial";
@@ -213,15 +438,35 @@
     }
 
     document.addEventListener("DOMContentLoaded", function() {
-        var selectedFont = localStorage.getItem("selectedFont");
-        if (selectedFont) {
-            document.body.style.fontFamily = selectedFont;
-            document.querySelectorAll('.login-container input').forEach(input => {
-                input.style.fontFamily = selectedFont;
-            });
-            updateButtonText();
-        }
+      var selectedFont = localStorage.getItem("selectedFont");
+      if (selectedFont) {
+        document.body.style.fontFamily = selectedFont;
+        document.querySelectorAll('input[type="text"], select').forEach(input => {
+          input.style.fontFamily = selectedFont;
+        });
+        updateButtonText();
+      }
+    });
+
+    document.getElementById('loginLink').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('loginPopup').style.display = 'flex';
+    });
+
+    document.getElementById('closeBtn').addEventListener('click', function() {
+      document.getElementById('loginPopup').style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+      if (event.target === document.getElementById('loginPopup')) {
+        document.getElementById('loginPopup').style.display = 'none';
+      }
+    });
+
+    document.getElementById('loginButton').addEventListener('click', function() {
+      window.location.href = 'second_webpage.html';
     });
   </script>
+
 </body>
 </html>
