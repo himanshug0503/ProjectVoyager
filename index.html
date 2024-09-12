@@ -3,29 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voyager Wallpaper</title>
+  <title>Voyager Wallpaper with Font Toggle</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-image: url('image4.JPG'); /* Replace 'beautiful-wallpaper.jpg' with your desired wallpaper */
+      background-image: url('image4.JPG'); /* Replace 'image4.JPG' with your wallpaper */
       background-size: cover;
       background-position: center;
       overflow: hidden;
-      font-family: Arial, sans-serif;
+      font-family: Arial, sans-serif; /* Default font */
+    }
+
+    .login-container {
+      position: fixed;
+      top: 65%;
+      left: 83%;
+      width: 28%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 999;
+      text-align: center;
+    }
+
+    .login-container input {
+      display: block;
+      width: 95%;
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: inherit; /* Use the font-family of the body */
+    }
+
+    .login-container input[type="password"] {
+      margin-bottom: 20px;
+    }
+
+    .forget-password {
+      display: block;
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: #0866ff;
+      font-size: 14px;
+    }
+
+    .forget-password:hover {
+      text-decoration: underline;
     }
 
     .bug-button {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       background-color: #fff;
       padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
-      z-index: 999;
+      text-align: center;
+      margin-top: 10px;
+      display: inline-block;
     }
 
     .bug-button:hover {
@@ -71,7 +108,6 @@
       right: 0;
       bottom: 0;
       background-color: #ccc;
-      -webkit-transition: .4s;
       transition: .4s;
       border-radius: 34px;
     }
@@ -84,7 +120,6 @@
       left: 4px;
       bottom: 4px;
       background-color: white;
-      -webkit-transition: .4s;
       transition: .4s;
       border-radius: 50%;
     }
@@ -94,120 +129,99 @@
     }
 
     input:checked + .toggle-slider:before {
-      -webkit-transform: translateX(26px);
-      -ms-transform: translateX(26px);
       transform: translateX(26px);
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      padding: 5px 10px;
+      background-color: #ccc;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <div class="bug-button">
-    <a href="second_webpage.html">Beautiful Button</a> <!-- Adjust the URL to your desired link -->
-  </div>
-
-  <div class="toggle-container">
-    <label for="style-toggle">Select your style:</label>
-    <div class="toggle-switch">
-      <input type="checkbox" id="style-toggle">
-      <span class="toggle-slider"></span>
+  <div class="login-container">
+    <input type="text" placeholder="Enter email address or phone number">
+    <input type="password" placeholder="Password">
+    <a href="forgot_password.html" class="forget-password">Forget Password?</a>
+    <div class="bug-button">
+      <a href="second_webpage.html">Log In Button</a>
     </div>
   </div>
 
+  <div class="toggle-container">
+    <button class="toggle-btn" onclick="toggleFont()" id="fontToggleButton">Toggle Font</button>
+  </div>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const bugButton = document.querySelector('.bug-button a');
-        bugButton.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior
-            window.location.href = "second_webpage.html"; // Adjust the URL to your desired link
+    function toggleFont() {
+      var currentFont = localStorage.getItem("selectedFont");
+
+      if (currentFont === "Arial, sans-serif") {
+        document.body.style.fontFamily = "Times New Roman, serif";
+        document.querySelectorAll('.login-container input').forEach(input => {
+          input.style.fontFamily = "Times New Roman, serif";
         });
+        localStorage.setItem("selectedFont", "Times New Roman, serif");
+      } else if (currentFont === "Times New Roman, serif") {
+        document.body.style.fontFamily = "Helvetica, sans-serif";
+        document.querySelectorAll('.login-container input').forEach(input => {
+          input.style.fontFamily = "Helvetica, sans-serif";
+        });
+        localStorage.setItem("selectedFont", "Helvetica, sans-serif");
+      } else if (currentFont === "Helvetica, sans-serif") {
+        document.body.style.fontFamily = "Chiller, cursive";
+        document.querySelectorAll('.login-container input').forEach(input => {
+          input.style.fontFamily = "Chiller, cursive";
+        });
+        localStorage.setItem("selectedFont", "Chiller, cursive");
+      } else {
+        document.body.style.fontFamily = "Arial, sans-serif";
+        document.querySelectorAll('.login-container input').forEach(input => {
+          input.style.fontFamily = "Arial, sans-serif";
+        });
+        localStorage.setItem("selectedFont", "Arial, sans-serif");
+      }
+
+      updateButtonText();
+    }
+
+    function updateButtonText() {
+      var currentFont = localStorage.getItem("selectedFont");
+      var button = document.getElementById("fontToggleButton");
+
+      switch(currentFont) {
+        case "Arial, sans-serif":
+          button.innerText = "Arial";
+          break;
+        case "Times New Roman, serif":
+          button.innerText = "Times New Roman";
+          break;
+        case "Helvetica, sans-serif":
+          button.innerText = "Helvetica";
+          break;
+        case "Chiller, cursive":
+          button.innerText = "Chiller";
+          break;
+        default:
+          button.innerText = "Toggle Font";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var selectedFont = localStorage.getItem("selectedFont");
+        if (selectedFont) {
+            document.body.style.fontFamily = selectedFont;
+            document.querySelectorAll('.login-container input').forEach(input => {
+                input.style.fontFamily = selectedFont;
+            });
+            updateButtonText();
+        }
     });
   </script>
 </body>
 </html>
-
-
-
-
-
-<!-- Language Toggle -->
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Font Family Toggle</title>
-    <style>
-        /* Style for the font toggle button */
-        .toggle-btn {
-            cursor: pointer;
-            padding: 5px 10px;
-            background-color: #ccc;
-            border: none;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-    <button class="toggle-btn" onclick="toggleFont()" id="fontToggleButton">Toggle Font</button>
-
-    <script>
-        // Function to toggle font family
-        function toggleFont() {
-            // Get the current font family
-            var currentFont = localStorage.getItem("selectedFont");
-
-            // Toggle the font family
-            if (currentFont === "Arial, sans-serif") {
-                document.body.style.fontFamily = "Times New Roman, serif"; // Change to Times New Roman
-                localStorage.setItem("selectedFont", "Times New Roman, serif");
-            } else if (currentFont === "Times New Roman, serif") {
-                document.body.style.fontFamily = "Chiller, sans-serif"; // Change to Chiller
-                localStorage.setItem("selectedFont", "Chiller, sans-serif");
-            } else {
-                document.body.style.fontFamily = "Arial, sans-serif"; // Change to Arial
-                localStorage.setItem("selectedFont", "Arial, sans-serif");
-            }
-
-            // Update button text based on selected language
-            updateButtonText();
-        }
-
-        // Function to update button text based on selected language
-        function updateButtonText() {
-            var currentFont = localStorage.getItem("selectedFont");
-            var button = document.getElementById("fontToggleButton");
-
-            // Set button text based on selected font
-            switch(currentFont) {
-                case "Arial, sans-serif":
-                    button.innerText = "Arial";
-                    break;
-                case "Times New Roman, serif":
-                    button.innerText = "Times New Roman";
-                    break;
-                case "Chiller, sans-serif":
-                    button.innerText = "Chiller";
-                    break;
-                default:
-                    button.innerText = "Toggle Font";
-            }
-        }
-
-        // Apply the font preference when the page loads
-        window.onload = function() {
-            var selectedFont = localStorage.getItem("selectedFont");
-            if (selectedFont) {
-                document.body.style.fontFamily = selectedFont;
-                updateButtonText();
-            }
-        }
-    </script>
-</body>
-</html>
-<!-- Text New -->
