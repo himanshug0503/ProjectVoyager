@@ -17,6 +17,7 @@
 }
 .navbar-nav li 
 {
+    left: 100px;
     padding: 0 10px;
 }
 navbar-nav li a
@@ -278,7 +279,206 @@ h1::after
     color: red;
 }
 
+/* Style the dropdown button */
+.dropdown-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Some padding */
+    font-size: 16px; /* Font size */
+    border: none; /* Remove borders */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position it below the button */
+    background-color: #f9f9f9; /* Background color */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow */
+    z-index: 1; /* Make sure it’s on top */
+  }
+  
+  /* Dropdown content links */
+  .dropdown-content a {
+    color: black; /* Text color */
+    padding: 12px 16px; /* Padding */
+    text-decoration: none; /* Remove underlines */
+    display: block; /* Block display */
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Show the dropdown content when the button is clicked */
+  .dropdown-button:hover + .dropdown-content,
+  .dropdown-content:hover {
+    display: block;
+  }
+ 
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 18px;
+    width: 24px;
+}
+
+.menu-line {
+    background-color: #000; /* Change to your desired color */
+    height: 3px;
+    width: 100%;
+    margin: 3px 0;
+}
+
+.dropdown-menu {
+    background-color: #fff; /* Change to your desired background color */
+    border: 1px solid #ddd; /* Optional: change border color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Optional: add shadow */
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+    color: #333; /* Change to your desired text color */
+    text-decoration: none;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa; /* Change to your desired hover color */
+}
+
+/* Basic styling for dropdown */
+.dropdown-menu {
+    display: none; /* Initially hidden */
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-menu li {
+    list-style-type: none;
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333; /* Text color */
+    display: block;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown when active */
+.show {
+    display: block;
+}
+
+/* Style for the Menu button */
+.menu-btn {
+    padding: 5px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative; /* For positioning the dropdown */
+}
+
+.menu-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Dropdown content styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%; /* Aligns dropdown below the menu button */
+    left: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+/* Style for the Menu button */
+.menu-btn {
+    padding: 5px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative; /* For positioning the dropdown */
+}
+
+.menu-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Dropdown content styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%; /* Aligns dropdown below the menu button */
+    left: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
 
 
 
+<!-- Your search bar styling -->
+<style>
+    .search-container {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+    }
 
+    .search-box {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 280px;
+    }
+
+    .search-button {
+        padding: 5px 15px;
+        margin-left: 5px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>

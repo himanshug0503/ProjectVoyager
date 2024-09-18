@@ -1,0 +1,208 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero section styles */
+#hero {
+    background: #f4f4f4;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+#hero h2 {
+    margin-bottom: 1rem;
+}
+
+#hero .btn {
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#hero .btn:hover {
+    background: #555;
+}
+
+/* Main content styles */
+main {
+    padding: 2rem 0;
+}
+
+article {
+    margin-bottom: 2rem;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+article h3 {
+    margin-bottom: 0.5rem;
+}
+
+article p {
+    margin-bottom: 1rem;
+}
+
+article .btn {
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+article .btn:hover {
+    background: #555;
+}
+
+/* About section styles */
+#about {
+    background: #e4e4e4;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+#about img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+/* Categories section styles */
+#categories {
+    padding: 2rem 0;
+}
+
+#categories ul {
+    list-style: none;
+    text-align: center;
+}
+
+#categories ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+#categories ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+#categories ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Contact section styles */
+#contact {
+    background: #f4f4f4;
+    padding: 2rem 0;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: auto;
+}
+
+#contact form label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact form button {
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact form button:hover {
+    background: #555;
+}
+
+/* Footer styles */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}

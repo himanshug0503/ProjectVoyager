@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voyager - Home Page</title>
+  <link rel="icon" href="logo2.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Page Container */
+    .page-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      background-color: rgb(255, 255, 255);
+      color: white;
+      padding: 13px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    header nav a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #555;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    header nav a:hover {
+      background-color: #777;
+    }
+
+    /* First Page */
+    .page-1 {
+      background-image: url('image34.JPG');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    select, input[type="text"] {
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    select {
+      flex: 1;
+    }
+
+    input[type="text"] {
+      flex: 2;
+    }
+
+    .search-button {
+      background-color: #0866ff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Second Page */
+    .page-2 {
+      background-image: url('image35.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh; /* Ensures the background covers the entire viewport */
+      padding: 20px;
+      color: white; /* Adjust text color if needed */
+    }
+
+    /* Third Page */
+    .page-3 {
+      background-color: #baaff0;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .circle-container {
+      display: flex;
+      justify-content: space-around;
+      margin: 40px 0;
+    }
+
+    .circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 2px solid red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .circle-text {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    /* Fourth Page */
+    .page-4 {
+      background-color: #334a5c;
+      padding: 50px 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .customer-image {
+      width: 14cm;
+      height: 7cm;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      margin: 20px 0;
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .testimonial-tile {
+      background: #fff;
+      color: #333;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+      flex: 1;
+    }
+
+    .testimonial-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .testimonial-tile h3 {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #334a5c;
+    }
+
+    .testimonial-tile p {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      padding: 15px 20px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Popup Modal */
+    .popup {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1200;
+    }
+
+    .popup-content {
+      display: flex;
+      width: 50%;
+      height: 400px;
+      background: white;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .popup-grey {
+      background-color: #eee;
+      width: 40%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .popup-grey .icon {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .popup-grey ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .popup-grey ul li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .popup-grey ul li i {
+      color: #0866ff;
+      margin-right: 10px;
+    }
+
+    .popup-white {
+      background-color: #fff;
+      width: 60%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .popup-content .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .popup-white h1 {
+      margin: 0 0 20px;
+    }
+
+    .popup-white p {
+      font-size: 14px;
+      color: #666;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .popup-content form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .popup-content input {
+      width: 80%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .popup-content button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: orange;
+      color: white;
+      cursor: pointer;
+      width: 80%;
+      text-align: center;
+    }
+    .welcome-text {
+      position: absolute;
+      top: 350px; /* Adjust as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2em; /* Adjust the font size as needed */
+      color: white; /* Choose a color that stands out on your background */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: add shadow for better readability */
+      z-index: 10; /* Ensure it's on top of other content */
+  }
+  
+  /* Ensure the form-container has a z-index lower than the welcome text if needed */
+    .form-container {
+      position: absolute;
+      top: 400px; /* Adjust as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5; /* Ensure this is lower than welcome text */
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* Optional: background with transparency */
+      border-radius: 10px; /* Optional: rounded corners */
+  }
+  
+
+
+    .social-icons {
+      text-align: center; /* Center the icons */
+      padding: 20px;
+      background-color: #334a5c; /* Example background color */
+  }
+  
+  .social-icons a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white; /* Icon color */
+      font-size: 24px;
+  }
+  
+  .social-icons a:hover {
+      color: #FFD700; /* Change color on hover */
+  }
+  
+  /* Navigation and Menu Styles */
+nav {
+  display: flex;
+  gap: 15px;
+  position: relative; /* Needed for absolute positioning of the dropdown */
+}
+
+.menu-container {
+  position: relative;
+}
+.menu-text {
+  font-size: 16px; /* Adjust font size as needed */
+}
+
+.menu-button {
+  display: flex;
+  align-items: center;
+  background-color: #555; /* Adjust color as needed */
+  color: white; /* Adjust color as needed */
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.line {
+  width: 20px; /* Adjust width as needed */
+  height: 2px; /* Adjust height as needed */
+  background-color: white; /* Adjust color as needed */
+  margin: 3px 0;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  <!-- background-color: #fff; /* Adjust background color as needed */ -->
+  color: #333; /* Adjust text color as needed */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for profile picture and username */
+.profile-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Adjust as needed */
+}
+
+.profile-pic {
+  height: 40px; /* Adjust size as needed */
+  width: 40px;  /* Adjust size as needed */
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.username {
+  color: rgb(18, 17, 17); /* Adjust color as needed */
+  font-size: 16px; /* Adjust size as needed */
+}
+
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0; /* Adjust hover color as needed */
+}
+
+.popup-content button:hover {
+  background-color: darkorange;
+}
+  </style>
+</head>
+<body>
+
+
+  <header>
+    <img src="logo2.png" alt="Your Logo" style="height: 100px; left: 26px;">
+    <nav>
+        <div class="profile-container">
+            <img src="My_ProfPic.jpg" alt="Profile Picture" class="profile-pic">
+            <span class="username">Himanshu</span>
+        </div>
+        <div class="menu-container">
+            <div class="menu-button" id="menuButton">
+                <div class="menu-icon">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <span class="menu-text">Menu</span>
+            </div>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="second_webpage.html">Social Media</a>
+                <a href="#">Rental Agreement</a>
+                <a href="#">Packer & Movers</a>
+                <a href="#">Refer a friend</a>
+                <a href="Blog.html">Blog</a>
+                <a href="index.html">Log Out</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+
+  <!-- Page Container -->
+  <div class="page-container">
+    
+    
+    <!-- Page 1 (First Page) -->
+    <div class="welcome-text">
+      Welcome to Voyager!!
+  </div>
+    
+    <div class="page-1">
+      <div class="form-container">
+        <select>
+          <option value="" disabled selected>Select an option</option>
+          <option value="1">Bangalore</option>
+          <option value="2">Delhi</option>
+          <option value="3">Chandigarh</option>
+        </select>
+        <input type="text" placeholder="Enter text here">
+        <button class="search-button"><i class="fas fa-search"></i> Search</button>
+      </div>
+    </div>
+
+    <!-- Page 2 (Second Page) -->
+    <div class="page-2">
+      <h1>Welcome to Page 2</h1>
+      <p>This is the content of the second page. Scroll down for more.</p>
+    </div>
+
+    <!-- Page 3 (We Make A Difference) -->
+    <div class="page-3">
+      <h1>We Make A Difference</h1>
+      <div class="circle-container">
+        <div class="circle">
+          <span>Impact</span>
+        </div>
+        <div class="circle">
+          <span>Quality</span>
+        </div>
+        <div class="circle">
+          <span>Value</span>
+        </div>
+      </div>
+      <div class="circle-text">Our dedication to delivering high-quality services makes a real impact.</div>
+    </div>
+
+    <!-- Page 4 (Our Customers Love Us) -->
+    <div class="page-4">
+      <h1>Our Customers Love Us</h1>
+      <img src="your-image.jpg" alt="Customer Image" class="customer-image">
+
+      <!-- Testimonials -->
+      <div class="testimonials">
+        <div class="testimonial-tile">
+          <img src="image1.jpg" alt="John Doe" class="testimonial-image">
+          <h3>John Doe</h3>
+          <p>"This service is amazing! It exceeded all my expectations and I couldn't be happier with the results."</p>
+        </div>
+        <div class="testimonial-tile">
+          <img src="image1.jpg" alt="Jane Smith" class="testimonial-image">
+          <h3>Jane Smith</h3>
+          <p>"A fantastic experience from start to finish. The team was professional and attentive. Highly recommended!"</p>
+        </div>
+        <div class="testimonial-tile">
+          <img src="image1.jpg" alt="Emily Johnson" class="testimonial-image">
+          <h3>Emily Johnson</h3>
+          <p>"Excellent service! The support and quality provided were top-notch. I would definitely use this again."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Voyager. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
+
+  <footer>
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.reddit.com" target="_blank"><i class="fab fa-reddit"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+</footer>
+
+
+  <!-- Popup Modal -->
+  <div id="loginPopup" class="popup">
+    <div class="popup-content">
+      <div class="popup-grey">
+        <i class="fas fa-home icon"></i>
+        <ul>
+          <li><i class="fas fa-check"></i> Zero brokerage</li>
+          <li><i class="fas fa-check"></i> Thousands of new listings daily</li>
+          <li><i class="fas fa-check"></i> 100 Cr+ brokerage saved</li>
+        </ul>
+      </div>
+      <div class="popup-white">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <h1>Log In</h1>
+        <p><strong>Enter e-mail to continue</strong></p>
+        <form id="loginForm">
+          <input type="email" id="email" name="email" placeholder="Enter email here..." required>
+          <button type="button" id="loginButton">Login</button>
+        </form>
+        <p>By continuing, you agree to our terms and conditions.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Show the popup when login is clicked
+    document.getElementById('loginLink').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('loginPopup').style.display = 'flex';
+    });
+
+    // Close the popup
+    document.getElementById('closeBtn').addEventListener('click', function() {
+      document.getElementById('loginPopup').style.display = 'none';
+    });
+
+    // Close the popup if clicking outside of it
+    window.addEventListener('click', function(event) {
+      if (event.target === document.getElementById('loginPopup')) {
+        document.getElementById('loginPopup').style.display = 'none';
+      }
+    });
+
+    // Navigate to second_page.html on login
+    document.getElementById('loginButton').addEventListener('click', function() {
+      window.location.href = 'second_webpage.html';
+    });
+
+    document.getElementById('menuLink').addEventListener('click', function(event) {
+      event.preventDefault();
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      const isVisible = dropdownMenu.style.display === 'block';
+      
+      // Hide all dropdown menus
+      document.querySelectorAll('.dropdown-menu').forEach(menu => menu.style.display = 'none');
+      
+      // Toggle the clicked dropdown menu
+      dropdownMenu.style.display = isVisible ? 'none' : 'block';
+    });
+    
+    // Close the dropdown if clicking outside of it
+    window.addEventListener('click', function(event) {
+      if (!event.target.matches('#menuLink')) {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => menu.style.display = 'none');
+      }
+    });
+    
+  </script>
+  
+</body>
+</html>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById('menuButton');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+  
+      menuButton.addEventListener('click', () => {
+          // Toggle the display of the dropdown menu
+          if (dropdownMenu.style.display === 'block') {
+              dropdownMenu.style.display = 'none';
+          } else {
+              dropdownMenu.style.display = 'block';
+          }
+      });
+  
+      // Hide the dropdown menu if clicking outside
+      document.addEventListener('click', (event) => {
+          if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+              dropdownMenu.style.display = 'none';
+          }
+      });
+  });
+  </script>
+  

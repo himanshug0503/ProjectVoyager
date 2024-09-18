@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Blog</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h2>Welcome to My Blog</h2>
+                <p>Your source for the latest insights and trends.</p>
+                <a href="#latest-posts" class="btn">Read Our Latest Posts</a>
+            </div>
+        </section>
+
+        <section id="latest-posts">
+            <div class="container">
+                <h2>Latest Posts</h2>
+                <article>
+                    <img src="post1.jpg" alt="Post 1">
+                    <h3><a href="#post1">Blog Post Title 1</a></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
+                    <a href="#post1" class="btn">Read More</a>
+                </article>
+                <article>
+                    <img src="post2.jpg" alt="Post 2">
+                    <h3><a href="#post2">Blog Post Title 2</a></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
+                    <a href="#post2" class="btn">Read More</a>
+                </article>
+                <!-- Add more articles as needed -->
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt felis eget libero cursus, nec bibendum sem aliquam.</p>
+                <img src="about.jpg" alt="About Us">
+            </div>
+        </section>
+
+        <section id="categories">
+            <div class="container">
+                <h2>Categories</h2>
+                <ul>
+                    <li><a href="#category1">Category 1</a></li>
+                    <li><a href="#category2">Category 2</a></li>
+                    <li><a href="#category3">Category 3</a></li>
+                    <!-- Add more categories as needed -->
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form action="submit_form.php" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 My Blog. All rights reserved.</p>
+            <ul>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

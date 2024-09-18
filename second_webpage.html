@@ -9,129 +9,111 @@
          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
  </head>
 <body>
-        <!-----Navigation Bar----->
-    <section id="nav-bar">
-    <nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" href="#"><img src="logo2.png"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-  
     
-  <head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Menu</title>
-    <style>
-        /* Style for the navigation menu */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #ffffff; /* Change this to your desired background color */
-            z-index: 1000; /* Set a high z-index to ensure it appears above other content */
-        }
-    </head>
-
-
-
-    
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Bar</title>
-    <style>
-        .search-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 5px;
-        }
-        .search-box {
-            
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 280px;
-
-        }
-        .search-button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    <title>Navigation Bar</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="search-container">
-        <input type="text" class="search-box" placeholder="Search Voyager...">
-        <button class="search-button">Search</button>
-    </div>
-</body>  
+
+<!-- Navigation Bar -->
+<section id="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#"><img src="logo2.png" alt="Logo"></a>
+            
+            <!-- Search Bar next to Logo -->
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search...">
+                <button class="search-button">Search</button>
+            </div>
+
+            <!-- Navbar Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Links on Right -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <!-- Menu Button on the Right of Pricing -->
+                    <li class="nav-item dropdown">
+                        <button class="nav-link menu-btn" id="menu-btn">Menu</button>
+                        <div class="dropdown-content" id="dropdown-content">
+                            <a href="#option1">Option 1</a>
+                            <a href="#option2">Option 2</a>
+                            <a href="#option3">Option 3</a>
+                            <a href="#option4">Option 4</a>
+                            <a href="#option5">Option 5</a>
+                            <a href="#option6">Option 6</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+
+
+
+
+
+
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
 
 
 
 
     
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#top">HOME </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#about">ABOUT US</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#services">PRICING</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#team">OUR TEAM</a>
-      </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#price">PRICE PLANS</a>
-      </li><li class="nav-item">
-        <a class="nav-link" href="#testimonials">TESTIMONIALS</a>
-      </li><li class="nav-item">
-        <a class="nav-link" href="#contact">CONTACT US</a>
-      </li>
-    </ul>
+  
+
+
+
+
+    
+    
   </div>
 </nav>
 
-
-<!-----Horizontal black line----->
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=2.0">
-    <title>Horizontal Line</title>
-</head>
-<body>
-
-<p></p>
-
-<hr>
-
-<p></p>
-
-</body>
-
-
-<!-----Vertical black line----->
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vertical Line</title>
     <style>
+        body {
+            margin: 0;
+            height: 100vh; /* Ensure body takes full viewport height */
+            position: relative; /* Set body as a reference for absolute positioning */
+        }
         .vertical-line {
             position: absolute;
             left: 9cm; /* Adjust this value as needed */
             top: 0;
-            height: 100%;
+            height: 100%; /* Full height of the container */
             width: 1px; /* Width of the vertical line */
             background-color: black; /* Color of the vertical line */
         }
@@ -141,15 +123,17 @@
 
 <div class="vertical-line"></div>
 
-
-
 </body>
+</html>
+
 
 
 
 
 <!-----Left side section----->
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -233,7 +217,7 @@
 
         /* New sections: Saved and Groups */
         .icon-label-container {
-        width: 50px;  /* Same size as profile picture */
+            width: 50px;  /* Same size as profile picture */
             height: 50px; /* Same size as profile picture */
             margin-right: 15px;
             display: inline-block;
@@ -308,8 +292,10 @@
     </body>
     
 
-
 <!-----Right side section----->
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -322,12 +308,13 @@
         }
         .right-section {
             position: fixed;
-            top: 126;
+            top: 126px; /* Added px unit */
             right: 0;
             width: 300px; /* Adjust width as needed */
             height: 100vh; /* 100% height of viewport */
             background-color: #f0f0f0; /* Light gray background color */
             padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
         }
         .right-section h2 {
             margin-top: 0;
@@ -379,6 +366,24 @@
         }
     </style>
 </head>
+
+<body>
+    <div class="right-section">
+        <!-- Example content -->
+        <h2>Sponsored</h2>
+        <div class="sponsored-section">
+            <div class="image-container">
+                <img src="path/to/image.jpg" alt="Sponsored Image">
+            </div>
+            <div class="text-container">
+                <h3>Title of Sponsored Content</h3>
+                <p>Description of the sponsored content goes here. This section includes relevant details and information.</p>
+            </div>
+        </div>
+        <!-- Add more sponsored sections or other content here -->
+    </div>
+</body>
+</html>
 <body>
 
 <div class="right-section">
@@ -554,7 +559,30 @@
                 document.body.style.fontFamily = selectedFont;
             }
         }
+        document.querySelector('.dropdown-button').addEventListener('click', function() {
+            var dropdownContent = document.querySelector('.dropdown-content');
+            dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+          });
+
+          
+          
     </script>
+
+    <script>
+
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            var dropdown = document.getElementById('dropdown-content');
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        });
+        
+          
+    </script>
+
+
 </body>
 </html>
 
