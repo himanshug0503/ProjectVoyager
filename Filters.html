@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voyager - Home Page</title>
+  <title>Voyager - Making Dream Work</title>
   <link rel="icon" href="logo2.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -163,90 +163,56 @@
       padding: 50px 20px;
       color: white;
       text-align: center;
-  }
-  
-  .customer-image {
+    }
+
+    .customer-image {
       width: 14cm;
       height: 7cm;
       margin-bottom: 30px;
       border-radius: 8px;
       object-fit: cover;
-  }
-  
-  /* Testimonials Section */
-  .testimonials {
+    }
+
+    /* Testimonials Section */
+    .testimonials {
       margin: 20px 0;
       display: flex;
-      justify-content: center; /* Center the testimonials */
-      overflow: hidden; /* Hides overflow to show only three tiles */
-  }
-  
-  .testimonial-container {
-      display: flex;
-      align-items: center;
-      flex-wrap: nowrap; /* Prevent wrapping for sliding effect */
-  }
-  
-  .testimonial-tiles {
-      display: flex;
-      transition: transform 0.5s ease; /* Smooth transition */
-      width: fit-content; /* Adjust width automatically based on content */
-  }
-  
-  .testimonial-tile {
+      justify-content: space-around;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .testimonial-tile {
       background: #fff;
       color: #333;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       text-align: center;
-      width: 300px; /* Fixed width */
-      flex: 0 0 auto; /* Prevent flex items from shrinking */
-      margin: 0 10px; /* Space between tiles */
-  }
-  
-  .testimonial-image {
+      width: 300px;
+      flex: 1;
+    }
+
+    .testimonial-image {
       width: 80px;
       height: 80px;
       border-radius: 50%;
       margin-bottom: 15px;
       object-fit: cover;
-  }
-  
-  .testimonial-tile h3 {
+    }
+
+    .testimonial-tile h3 {
       font-size: 18px;
       margin: 10px 0;
       color: #334a5c;
-  }
-  
-  .testimonial-tile p {
+    }
+
+    .testimonial-tile p {
       font-size: 14px;
       color: #666;
       margin: 0;
-  }
-  
-  /* Media Queries for Responsiveness */
-  @media (max-width: 768px) {
-      .testimonial-tile {
-          width: 90%; /* Make tiles full width on smaller screens */
-          margin: 10px 0; /* Add margin for spacing */
-      }
-  
-      .testimonial-container {
-          flex-direction: column; /* Stack testimonials vertically */
-          align-items: center; /* Center align items */
-      }
-  }
-  
-  .arrow {
-      position: absolute; /* Positioned relative to testimonials */
-      right: 10px; /* Adjust as needed */
-      cursor: pointer;
-      font-size: 2em;
-      color: #333;
-      user-select: none; /* Prevent text selection */
-  }
-  
+    }
+
     /* Footer */
     footer {
       background-color: rgba(0, 0, 0, 0.8);
@@ -460,24 +426,6 @@ nav {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Styles for profile picture and username */
-.profile-container {
-  display: flex;
-  align-items: center;
-  margin-right: 20px; /* Adjust as needed */
-}
-
-.profile-pic {
-  height: 40px; /* Adjust size as needed */
-  width: 40px;  /* Adjust size as needed */
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.username {
-  color: rgb(18, 17, 17); /* Adjust color as needed */
-  font-size: 16px; /* Adjust size as needed */
-}
 
 
 .dropdown-menu a {
@@ -494,28 +442,15 @@ nav {
 .popup-content button:hover {
   background-color: darkorange;
 }
-
-/* Container to hold the image */
-.image-container {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  background-color: #f0f0f0;
-  overflow: hidden;
-}
-
   </style>
 </head>
 <body>
 
-
   <header>
     <img src="logo2.png" alt="Your Logo" style="height: 100px; left: 26px;">
     <nav>
-        <div class="profile-container">
-            <img src="My_ProfPic.jpg" alt="Profile Picture" class="profile-pic">
-            <span class="username">Himanshu</span>
-        </div>
+        <a href="#" id="loginLink">Login</a>
+        <a href="#">Signup</a>
         <div class="menu-container">
             <div class="menu-button" id="menuButton">
                 <div class="menu-icon">
@@ -526,18 +461,15 @@ nav {
                 <span class="menu-text">Menu</span>
             </div>
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="second_webpage.html">Social Media</a>
+                <a href="#">Post Your Property</a>
                 <a href="#">Rental Agreement</a>
                 <a href="#">Packer & Movers</a>
                 <a href="#">Refer a friend</a>
-                <a href="Blog.html">Blog</a>
-                <a href="index.html">Log Out</a>
+                <a href="#">Blog</a>
             </div>
         </div>
     </nav>
 </header>
-
-
 
 
   <!-- Page Container -->
@@ -548,9 +480,7 @@ nav {
     <div class="welcome-text">
       Welcome to Voyager!!
   </div>
-   
-  
-  
+    
     <div class="page-1">
       <div class="form-container">
         <select>
@@ -563,7 +493,7 @@ nav {
         <button class="search-button"><i class="fas fa-search"></i> Search</button>
       </div>
     </div>
-    
+
     <!-- Page 2 (Second Page) -->
     <div class="page-2">
       <h1>Welcome to Page 2</h1>
@@ -591,52 +521,36 @@ nav {
       </div>
       <div class="final-text">Our dedication to delivering high-quality services makes a real impact.</div>
   </div>
+  
+  
+  
 
     <!-- Page 4 (Our Customers Love Us) -->
     <div class="page-4">
       <h1>Our Customers Love Us</h1>
       <img src="your-image.jpg" alt="Customer Image" class="customer-image">
-    
+
       <!-- Testimonials -->
       <div class="testimonials">
-        <div class="testimonial-container">
-          <div class="testimonial-tiles">
-            <div class="testimonial-tile">
-              <img src="image1.jpg" alt="John Doe" class="testimonial-image">
-              <h3>John Doe</h3>
-              <p>"This service is amazing! It exceeded all my expectations and I couldn't be happier with the results."</p>
-            </div>
-            <div class="testimonial-tile">
-              <img src="image1.jpg" alt="Jane Smith" class="testimonial-image">
-              <h3>Jane Smith</h3>
-              <p>"A fantastic experience from start to finish. The team was professional and attentive. Highly recommended!"</p>
-            </div>
-            <div class="testimonial-tile">
-              <img src="image1.jpg" alt="Emily Johnson" class="testimonial-image">
-              <h3>Emily Johnson</h3>
-              <p>"Excellent service! The support and quality provided were top-notch. I would definitely use this again."</p>
-            </div>
-            <div class="testimonial-tile">
-              <img src="image1.jpg" alt="Michael Brown" class="testimonial-image">
-              <h3>Michael Brown</h3>
-              <p>"Great service overall! I was impressed with the results and the level of attention to detail."</p>
-            </div>
-            <div class="testimonial-tile">
-              <img src="image1.jpg" alt="Alice Green" class="testimonial-image">
-              <h3>Alice Green</h3>
-              <p>"The experience was fantastic! I appreciate the effort the team put into making everything perfect."</p>
-            </div>
-            <div class="testimonial-tile">
-              <img src="image1.jpg" alt="Bob White" class="testimonial-image">
-              <h3>Bob White</h3>
-              <p>"I had a great time using this service. Highly efficient and very reliable!"</p>
-            </div>
-          </div>
-          <!-- Removed the arrow here -->
+        <div class="testimonial-tile">
+          <img src="image1.jpg" alt="John Doe" class="testimonial-image">
+          <h3>John Doe</h3>
+          <p>"This service is amazing! It exceeded all my expectations and I couldn't be happier with the results."</p>
+        </div>
+        <div class="testimonial-tile">
+          <img src="image1.jpg" alt="Jane Smith" class="testimonial-image">
+          <h3>Jane Smith</h3>
+          <p>"A fantastic experience from start to finish. The team was professional and attentive. Highly recommended!"</p>
+        </div>
+        <div class="testimonial-tile">
+          <img src="image1.jpg" alt="Emily Johnson" class="testimonial-image">
+          <h3>Emily Johnson</h3>
+          <p>"Excellent service! The support and quality provided were top-notch. I would definitely use this again."</p>
         </div>
       </div>
     </div>
-    
+  </div>
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2024 Voyager. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
@@ -698,7 +612,7 @@ nav {
 
     // Navigate to second_page.html on login
     document.getElementById('loginButton').addEventListener('click', function() {
-      window.location.href = 'second_webpage.html';
+      window.location.href = 'homepage.html';
     });
 
     document.getElementById('menuLink').addEventListener('click', function(event) {
@@ -747,38 +661,5 @@ nav {
           }
       });
   });
-  let currentTestimonialIndex = 0;
-const testimonialsToShow = 4; // Number of testimonials to show at a time
-
-function slideTestimonials() {
-  const testimonials = document.querySelectorAll('.testimonial-tile');
-  const totalTestimonials = testimonials.length;
-
-  // Hide all testimonials
-  testimonials.forEach((tile) => {
-    tile.style.display = 'none';
-  });
-
-  // Show the next set of testimonials
-  for (let i = 0; i < testimonialsToShow; i++) {
-    const index = (currentTestimonialIndex + i) % totalTestimonials;
-    if (totalTestimonials > 0) {
-      testimonials[index].style.display = 'block';
-    }
-  }
-
-  // Update the index for the next slide
-  currentTestimonialIndex = (currentTestimonialIndex + testimonialsToShow) % totalTestimonials;
-}
-
-// Initialize the first set of testimonials as visible
-document.addEventListener('DOMContentLoaded', () => {
-  slideTestimonials(); // Show initial testimonials
-
-  // Set interval for automatic sliding
-  setInterval(slideTestimonials, 5000); // Change slides every 5 seconds
-});
-
   </script>
-  
   
