@@ -115,15 +115,15 @@
       background-color: #baaff0;
       padding: 50px 20px;
       text-align: center;
-    }
-
-    .circle-container {
+  }
+  
+  .circle-container {
       display: flex;
       justify-content: space-around;
       margin: 40px 0;
-    }
-
-    .circle {
+  }
+  
+  .circle {
       width: 150px;
       height: 150px;
       border-radius: 50%;
@@ -132,12 +132,30 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-    }
-
-    .circle-text {
-      margin-top: 15px;
-      font-weight: bold;
-    }
+      font-size: 28px;
+  }
+  
+  .texts-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns text to the left */
+    margin: 20px 0; /* Space above the text */
+    gap: 165px; /* Optional: Adjusts the spacing between texts */
+}
+  
+.circle-text {
+  font-weight: bold;
+  font-size: 16px; /* Adjust the font size as needed */
+  margin-left: 145px; /* Move text slightly to the left */
+  /* Adjust the negative margin as needed */
+  }
+  
+  .final-text {
+      margin-top: 35px; /* Space between the separate texts and the final statement */
+      font-weight: normal; /* Adjust the font weight as needed */
+      font-size: 22px; /* Adjust the font size as needed */
+      font-weight: bold; /* Makes the text bold */
+      
+  }
 
     /* Fourth Page */
     .page-4 {
@@ -486,18 +504,26 @@ nav {
     <div class="page-3">
       <h1>We Make A Difference</h1>
       <div class="circle-container">
-        <div class="circle">
-          <span>Impact</span>
-        </div>
-        <div class="circle">
-          <span>Quality</span>
-        </div>
-        <div class="circle">
-          <span>Value</span>
-        </div>
+          <div class="circle">
+              <span>₹130 Cr+ </span>
+          </div>
+          <div class="circle">
+              <span>30 Lakhs+</span>
+          </div>
+          <div class="circle">
+              <span>2 Lakh+</span>
+          </div>
       </div>
-      <div class="circle-text">Our dedication to delivering high-quality services makes a real impact.</div>
-    </div>
+      <div class="texts-container">
+          <div class="circle-text">Brokerage Saved every year</div> <!-- Text for Impact -->
+          <div class="circle-text">Satisfied customers</div> <!-- Text for Quality -->
+          <div class="circle-text">New Listings per month</div> <!-- Text for Value -->
+      </div>
+      <div class="final-text">Our dedication to delivering high-quality services makes a real impact.</div>
+  </div>
+  
+  
+  
 
     <!-- Page 4 (Our Customers Love Us) -->
     <div class="page-4">
