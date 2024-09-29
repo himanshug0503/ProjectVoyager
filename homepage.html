@@ -112,7 +112,7 @@
 
     /* Third Page */
     .page-3 {
-      background-color: #baaff0;
+      background-color: #dcd7f1;
       padding: 50px 20px;
       text-align: center;
   }
@@ -138,14 +138,14 @@
   .texts-container {
     display: flex;
     justify-content: flex-start; /* Aligns text to the left */
-    margin: 20px 0; /* Space above the text */
-    gap: 165px; /* Optional: Adjusts the spacing between texts */
+    margin: 25px 0; /* Space above the text */
+    gap: 220px; /* Optional: Adjusts the spacing between texts */
 }
   
 .circle-text {
   font-weight: bold;
   font-size: 16px; /* Adjust the font size as needed */
-  margin-left: 145px; /* Move text slightly to the left */
+  margin-left: 160px; /* Move text slightly to the left */
   /* Adjust the negative margin as needed */
   }
   
@@ -156,6 +156,7 @@
       font-weight: bold; /* Makes the text bold */
       
   }
+
 
     /* Fourth Page */
     .page-4 {
@@ -551,24 +552,23 @@ nav {
    
   
   
-    <div class="page-1">
-      <div class="form-container">
-        <select>
-          <option value="" disabled selected>Select an option</option>
-          <option value="1">Bangalore</option>
-          <option value="2">Delhi</option>
-          <option value="3">Chandigarh</option>
-        </select>
-        <input type="text" placeholder="Enter text here">
+  <div class="page-1">
+    <div class="form-container">
+      <select>
+        <option value="" disabled selected>Select an option</option>
+        <option value="1">Bangalore</option>
+        <option value="2">Delhi</option>
+        <option value="3">Chandigarh</option>
+      </select>
+      <input type="text" placeholder="Enter text here">
+      
+      <!-- Wrap the button inside an anchor tag -->
+      <a href="Filters.html">
         <button class="search-button"><i class="fas fa-search"></i> Search</button>
-      </div>
+      </a>
     </div>
-    
-    <!-- Page 2 (Second Page) -->
-    <div class="page-2">
-      <h1>Welcome to Page 2</h1>
-      <p>This is the content of the second page. Scroll down for more.</p>
-    </div>
+  </div>
+  
 
     <!-- Page 3 (We Make A Difference) -->
     <div class="page-3">
@@ -776,7 +776,7 @@ document.addEventListener('DOMContentLoaded', () => {
   slideTestimonials(); // Show initial testimonials
 
   // Set interval for automatic sliding
-  setInterval(slideTestimonials, 5000); // Change slides every 5 seconds
+  setInterval(slideTestimonials, 4000); // Change slides every 4 seconds
 });
 
   </script>
