@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voyager - Making Dream Work</title>
+  <title>Voyager - Filters</title>
   <link rel="icon" href="logo2.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -13,204 +13,76 @@
       font-family: Arial, sans-serif;
     }
 
-    /* Page Container */
-    .page-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 100vh;
-    }
-
     /* Header */
     header {
-      background-color: rgb(255, 255, 255);
-      color: white;
+      background-color: #fff;
       padding: 13px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
-
-    header nav {
+    /* Navigation and Menu Styles */
+    nav {
       display: flex;
       gap: 15px;
+      position: relative;
     }
 
-    header nav a {
-      color: rgb(255, 255, 255);
-      text-decoration: none;
-      padding: 10px 20px;
+    .menu-container {
+      position: relative;
+    }
+
+    .menu-button {
+      display: flex;
+      align-items: center;
       background-color: #555;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    header nav a:hover {
-      background-color: #777;
-    }
-
-    /* First Page */
-    .page-1 {
-      background-image: url('image34.JPG');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: white;
-      text-align: center;
-    }
-
-    .form-container {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    select, input[type="text"] {
-      padding: 10px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
-
-    select {
-      flex: 1;
-    }
-
-    input[type="text"] {
-      flex: 2;
-    }
-
-    .search-button {
-      background-color: #0866ff;
       color: white;
       padding: 10px 20px;
-      border-radius: 4px;
+      border-radius: 5px;
       cursor: pointer;
+      text-decoration: none;
     }
 
-    /* Second Page */
-    .page-2 {
-      background-image: url('image35.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh; /* Ensures the background covers the entire viewport */
-      padding: 20px;
-      color: white; /* Adjust text color if needed */
-    }
-
-    /* Third Page */
-    .page-3 {
-      background-color: #baaff0;
-      padding: 50px 20px;
-      text-align: center;
-  }
-  
-  .circle-container {
+    .menu-icon {
       display: flex;
-      justify-content: space-around;
-      margin: 40px 0;
-  }
-  
-  .circle {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 2px solid red;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 28px;
-  }
-  
-  .texts-container {
-    display: flex;
-    justify-content: flex-start; /* Aligns text to the left */
-    margin: 20px 0; /* Space above the text */
-    gap: 165px; /* Optional: Adjusts the spacing between texts */
-}
-  
-.circle-text {
-  font-weight: bold;
-  font-size: 16px; /* Adjust the font size as needed */
-  margin-left: 145px; /* Move text slightly to the left */
-  /* Adjust the negative margin as needed */
-  }
-  
-  .final-text {
-      margin-top: 35px; /* Space between the separate texts and the final statement */
-      font-weight: normal; /* Adjust the font weight as needed */
-      font-size: 22px; /* Adjust the font size as needed */
-      font-weight: bold; /* Makes the text bold */
-      
-  }
-
-    /* Fourth Page */
-    .page-4 {
-      background-color: #334a5c;
-      padding: 50px 20px;
-      color: white;
-      text-align: center;
+      flex-direction: column;
+      margin-right: 10px;
     }
 
-    .customer-image {
-      width: 14cm;
-      height: 7cm;
-      margin-bottom: 30px;
-      border-radius: 8px;
-      object-fit: cover;
+    .line {
+      width: 20px;
+      height: 2px;
+      background-color: white;
+      margin: 3px 0;
     }
 
-    /* Testimonials Section */
-    .testimonials {
-      margin: 20px 0;
-      display: flex;
-      justify-content: space-around;
-      gap: 20px;
-      flex-wrap: wrap;
+    .menu-text {
+      font-size: 16px;
     }
 
-    .testimonial-tile {
-      background: #fff;
+    /* Dropdown Menu Styles */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
       color: #333;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      width: 300px;
-      flex: 1;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     }
 
-    .testimonial-image {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-      object-fit: cover;
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: inherit;
     }
 
-    .testimonial-tile h3 {
-      font-size: 18px;
-      margin: 10px 0;
-      color: #334a5c;
-    }
-
-    .testimonial-tile p {
-      font-size: 14px;
-      color: #666;
-      margin: 0;
+    .dropdown-menu a:hover {
+      background-color: #f0f0f0;
     }
 
     /* Footer */
@@ -220,7 +92,6 @@
       text-align: center;
       padding: 15px 20px;
       position: relative;
-      bottom: 0;
       width: 100%;
     }
 
@@ -228,229 +99,179 @@
       margin: 0;
     }
 
-    /* Popup Modal */
-    .popup {
-      display: none;
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 1200;
-    }
-
-    .popup-content {
-      display: flex;
-      width: 50%;
-      height: 400px;
-      background: white;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-
-    .popup-grey {
-      background-color: #eee;
-      width: 40%;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .popup-grey .icon {
-      font-size: 36px;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    .popup-grey ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .popup-grey ul li {
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-    }
-
-    .popup-grey ul li i {
-      color: #0866ff;
-      margin-right: 10px;
-    }
-
-    .popup-white {
-      background-color: #fff;
-      width: 60%;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .popup-content .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-      font-size: 20px;
-    }
-
-    .popup-white h1 {
-      margin: 0 0 20px;
-    }
-
-    .popup-white p {
-      font-size: 14px;
-      color: #666;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-
-    .popup-content form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .popup-content input {
-      width: 80%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .popup-content button {
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: orange;
-      color: white;
-      cursor: pointer;
-      width: 80%;
-      text-align: center;
-    }
-    .welcome-text {
-      position: absolute;
-      top: 350px; /* Adjust as needed */
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 2em; /* Adjust the font size as needed */
-      color: white; /* Choose a color that stands out on your background */
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: add shadow for better readability */
-      z-index: 10; /* Ensure it's on top of other content */
-  }
-  
-  /* Ensure the form-container has a z-index lower than the welcome text if needed */
-    .form-container {
-      position: absolute;
-      top: 400px; /* Adjust as needed */
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 5; /* Ensure this is lower than welcome text */
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8); /* Optional: background with transparency */
-      border-radius: 10px; /* Optional: rounded corners */
-  }
-  
-
-
     .social-icons {
-      text-align: center; /* Center the icons */
+      text-align: center;
       padding: 20px;
-      background-color: #334a5c; /* Example background color */
-  }
-  
-  .social-icons a {
+      background-color: #334a5c;
+    }
+
+    .social-icons a {
       margin: 0 10px;
       text-decoration: none;
-      color: white; /* Icon color */
+      color: white;
       font-size: 24px;
+    }
+
+    .social-icons a:hover {
+      color: #FFD700;
+    }
+
+    /* Filter section */
+    .container {
+      display: flex; /* Use flexbox to arrange items */
+      justify-content: space-between; /* Space between filter results and quick links */
+      margin: 20px; /* Added margin for better spacing */
+    }
+
+    .filters, .filter-results, .quick-links {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .filters {
+      flex: 1;
+      min-width: 250px;
+      margin-right: 20px; /* Space between filters and results */
+    }
+
+    .filter-results {
+      flex: 2; /* Take more space */
+    }
+
+    .quick-links {
+      width: 200px; /* Set a fixed width for quick links */
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 20px;
+      border-bottom: 2px solid #007BFF;
+      padding-bottom: 5px;
+    }
+
+    input[type="text"], select {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .property-card {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 10px 0;
+      padding: 15px;
+      position: relative;
+      text-align: center; /* Center text */
+    }
+
+    .property-image {
+      max-width: 150px; /* Adjust this value to your desired width */
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 10px; /* Space below the image */
+    }
+
+    .quick-links ul {
+      list-style-type: none; /* Remove bullet points */
+      padding: 0; /* Remove default padding */
+    }
+
+    .quick-links ul li {
+      margin: 10px 0;
+    }
+
+    .quick-links a {
+      text-decoration: none; /* Remove underline from links */
+      color: #000; /* Change link color */
+    }
+    .filter-section {
+      display: flex; /* Use flexbox for layout */
+      justify-content: space-between; /* Space between filter fields and the reset link */
+      align-items: center; /* Center align items vertically */
   }
   
-  .social-icons a:hover {
-      color: #FFD700; /* Change color on hover */
+  .reset-link {
+      margin-left: auto; /* Pushes the reset link to the right */
+      color: #007bff; /* Link color */
+      text-decoration: none; /* Remove underline */
+      font-weight: bold; /* Make it bold */
   }
   
-  /* Navigation and Menu Styles */
-nav {
-  display: flex;
-  gap: 15px;
-  position: relative; /* Needed for absolute positioning of the dropdown */
+  .reset-link:hover {
+      text-decoration: underline; /* Add underline on hover */
+  }
+  
+  .reset-link i {
+      margin-right: 5px; /* Space between icon and text */
+  }
+  .bhk-type-filter {
+    display: flex; /* Arrange items in a row */
+    gap: 8px; /* Space between items */
 }
 
-.menu-container {
-  position: relative;
-}
-.menu-text {
-  font-size: 16px; /* Adjust font size as needed */
-}
-
-.menu-button {
-  display: flex;
-  align-items: center;
-  background-color: #555; /* Adjust color as needed */
-  color: white; /* Adjust color as needed */
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
+.bhk-type {
+  padding: 5px 10px; /* Reduced padding for smaller fields */
+  font-size: 14px; /* Smaller font size */
+  border: 1px solid #007bff; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Show pointer on hover */
+  background-color: #f0f0f0; /* Light grey background */
+  transition: background-color 0.3s; /* Smooth background change */
 }
 
-.menu-icon {
-  display: flex;
-  flex-direction: column;
-  margin-right: 10px;
+.bhk-type.selected {
+  background-color: #007bff; /* Highlight color when selected */
+  color: white; /* Change text color when selected */
 }
 
-.line {
-  width: 20px; /* Adjust width as needed */
-  height: 2px; /* Adjust height as needed */
-  background-color: white; /* Adjust color as needed */
-  margin: 3px 0;
-}
+  
+  
 
-/* Dropdown menu styles */
-.dropdown-menu {
-  display: none; /* Hide by default */
-  position: absolute;
-  top: 100%;
-  left: 0;
-  <!-- background-color: #fff; /* Adjust background color as needed */ -->
-  color: #333; /* Adjust text color as needed */
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-}
+    .quick-links a:hover {
+      text-decoration: underline; /* Underline on hover */
+    }
+    #reset-button {
+      background-color: #f44336; /* Red background */
+      color: white; /* White text */
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+  
+  #reset-button:hover {
+      background-color: #d32f2f; /* Darker red on hover */
+  }
+  
 
-
-
-.dropdown-menu a {
-  display: block;
-  padding: 8px 16px;
-  text-decoration: none;
-  color: inherit;
-}
-
-.dropdown-menu a:hover {
-  background-color: #f0f0f0; /* Adjust hover color as needed */
-}
-
-.popup-content button:hover {
-  background-color: darkorange;
-}
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="logo2.png" alt="Your Logo" style="height: 100px; left: 26px;">
+<!-- Header -->
+<header>
+    <a href="homepage.html" target="_blank">
+        <img src="logo2.png" alt="Your Logo" style="height: 100px;">
+    </a>
     <nav>
-        <a href="#" id="loginLink">Login</a>
-        <a href="#">Signup</a>
         <div class="menu-container">
             <div class="menu-button" id="menuButton">
                 <div class="menu-icon">
@@ -464,202 +285,183 @@ nav {
                 <a href="#">Post Your Property</a>
                 <a href="#">Rental Agreement</a>
                 <a href="#">Packer & Movers</a>
-                <a href="#">Refer a friend</a>
+                <a href="#">Refer a Friend</a>
                 <a href="#">Blog</a>
             </div>
         </div>
     </nav>
 </header>
 
-
-  <!-- Page Container -->
-  <div class="page-container">
-    
-    
-    <!-- Page 1 (First Page) -->
-    <div class="welcome-text">
-      Welcome to Voyager!!
-  </div>
-    
-    <div class="page-1">
-      <div class="form-container">
-        <select>
-          <option value="" disabled selected>Select an option</option>
-          <option value="1">Bangalore</option>
-          <option value="2">Delhi</option>
-          <option value="3">Chandigarh</option>
-        </select>
-        <input type="text" placeholder="Enter text here">
-        <button class="search-button"><i class="fas fa-search"></i> Search</button>
-      </div>
-    </div>
-
-    <!-- Page 2 (Second Page) -->
-    <div class="page-2">
-      <h1>Welcome to Page 2</h1>
-      <p>This is the content of the second page. Scroll down for more.</p>
-    </div>
-
-    <!-- Page 3 (We Make A Difference) -->
-    <div class="page-3">
-      <h1>We Make A Difference</h1>
-      <div class="circle-container">
-          <div class="circle">
-              <span>₹130 Cr+ </span>
-          </div>
-          <div class="circle">
-              <span>30 Lakhs+</span>
-          </div>
-          <div class="circle">
-              <span>2 Lakh+</span>
-          </div>
-      </div>
-      <div class="texts-container">
-          <div class="circle-text">Brokerage Saved every year</div> <!-- Text for Impact -->
-          <div class="circle-text">Satisfied customers</div> <!-- Text for Quality -->
-          <div class="circle-text">New Listings per month</div> <!-- Text for Value -->
-      </div>
-      <div class="final-text">Our dedication to delivering high-quality services makes a real impact.</div>
+<!-- Page Container -->
+<div class="page-container">
+  <!-- Filter section -->
+  <div class="new-property">
+    <h2>New Property</h2>
+    <p>Check out our latest listings!</p>
   </div>
   
-  
-  
-
-    <!-- Page 4 (Our Customers Love Us) -->
-    <div class="page-4">
-      <h1>Our Customers Love Us</h1>
-      <img src="your-image.jpg" alt="Customer Image" class="customer-image">
-
-      <!-- Testimonials -->
-      <div class="testimonials">
-        <div class="testimonial-tile">
-          <img src="image1.jpg" alt="John Doe" class="testimonial-image">
-          <h3>John Doe</h3>
-          <p>"This service is amazing! It exceeded all my expectations and I couldn't be happier with the results."</p>
-        </div>
-        <div class="testimonial-tile">
-          <img src="image1.jpg" alt="Jane Smith" class="testimonial-image">
-          <h3>Jane Smith</h3>
-          <p>"A fantastic experience from start to finish. The team was professional and attentive. Highly recommended!"</p>
-        </div>
-        <div class="testimonial-tile">
-          <img src="image1.jpg" alt="Emily Johnson" class="testimonial-image">
-          <h3>Emily Johnson</h3>
-          <p>"Excellent service! The support and quality provided were top-notch. I would definitely use this again."</p>
-        </div>
+  <div class="container">
+    <div class="filters">
+        <h2>Filters</h2>
+        <div class="filter-section">
+          <!-- Your existing filter fields here -->
+      
+          <a href="#" id="reset-link" class="reset-link">
+              <i class="fas fa-sync-alt"></i> Reset
+          </a>
       </div>
+      
+      <div class="filter-section">
+        <!-- Other existing filter fields -->
+    
+        <div class="bhk-type-filter">
+            <span class="bhk-type" data-value="1-bhk">1 BHK</span>
+            <span class="bhk-type" data-value="2-bhk">2 BHK</span>
+            <span class="bhk-type" data-value="3-bhk">3 BHK</span>
+            <span class="bhk-type" data-value="4-bhk">4 BHK</span>
+        </div>
+        
     </div>
-  </div>
+    
+      
+        <form id="filter-form">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter location">
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Voyager. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-  </footer>
+            <label for="price-range">Price Range:</label>
+            <input type="text" id="price-range" name="price-range" placeholder="Enter price range">
 
-  <footer>
-    <div class="social-icons">
-        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.reddit.com" target="_blank"><i class="fab fa-reddit"></i></a>
-        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-    </div>
-</footer>
+            <label for="bedrooms">Bedrooms:</label>
+            <select id="bedrooms" name="bedrooms">
+                <option value="">Select Bedrooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4+</option>
+            </select>
 
+            <label for="property-type">Property Type:</label>
+            <select id="property-type" name="property-type">
+                <option value="">Select Type</option>
+                <option value="apartment">Apartment</option>
+                <option value="villa">Villa</option>
+                <option value="independent-house">Independent House</option>
+            </select>
 
-  <!-- Popup Modal -->
-  <div id="loginPopup" class="popup">
-    <div class="popup-content">
-      <div class="popup-grey">
-        <i class="fas fa-home icon"></i>
-        <ul>
-          <li><i class="fas fa-check"></i> Zero brokerage</li>
-          <li><i class="fas fa-check"></i> Thousands of new listings daily</li>
-          <li><i class="fas fa-check"></i> 100 Cr+ brokerage saved</li>
-        </ul>
-      </div>
-      <div class="popup-white">
-        <span class="close-btn" id="closeBtn">&times;</span>
-        <h1>Log In</h1>
-        <p><strong>Enter e-mail to continue</strong></p>
-        <form id="loginForm">
-          <input type="email" id="email" name="email" placeholder="Enter email here..." required>
-          <button type="button" id="loginButton">Login</button>
+            <button type="submit">Apply Filters</button>
         </form>
-        <p>By continuing, you agree to our terms and conditions.</p>
-      </div>
+    </div>
+
+    <div class="filter-results">
+        <h2>Filter Results</h2>
+        <div class="property-card">
+            <img src="Background_Images/Prop1.jpeg" alt="Property Title 1" class="property-image">
+            <h3>Property Title 1</h3>
+            <p><strong>Location:</strong> Nikoo Homes 1</p>
+            <p><strong>Price:</strong> ₹70,00,000</p>
+            <p><strong>Bedrooms:</strong> 3</p>
+            <p><strong>Type:</strong> Apartment</p>
+            <button>View Details</button>
+        </div>
+        <div class="property-card">
+            <img src="Background_Images/Prop2.jpeg" alt="Property Title 2" class="property-image">
+            <h3>Property Title 2</h3>
+            <p><strong>Location:</strong> Nikoo Homes 1</p>
+            <p><strong>Price:</strong> ₹80,00,000</p>
+            <p><strong>Bedrooms:</strong> 4</p>
+            <p><strong>Type:</strong> Villa</p>
+            <button>View Details</button>
+        </div>
+        <div class="property-card">
+            <img src="Background_Images/Prop3.jpeg" alt="Property Title 3" class="property-image">
+            <h3>Property Title 3</h3>
+            <p><strong>Location:</strong> Nikoo Homes 1</p>
+            <p><strong>Price:</strong> ₹65,00,000</p>
+            <p><strong>Bedrooms:</strong> 2</p>
+            <p><strong>Type:</strong> Independent House</p>
+            <button>View Details</button>
+        </div>
+    </div>
+
+    <div class="quick-links">
+        <h2>Quick Links</h2>
+        <ul>
+            <li><a href="#">Flats in Agrahara badavane for sale</a></li>
+            <li><a href="#">Flats in Visthar for sale</a></li>
+            <li><a href="#">Flats in Kannuru for sale</a></li>
+            <li><a href="#">Flats in Chokanahalli for sale</a></li>
+        </ul>
     </div>
   </div>
+</div>
 
-  <script>
-    // Show the popup when login is clicked
-    document.getElementById('loginLink').addEventListener('click', function(event) {
-      event.preventDefault();
-      document.getElementById('loginPopup').style.display = 'flex';
-    });
-
-    // Close the popup
-    document.getElementById('closeBtn').addEventListener('click', function() {
-      document.getElementById('loginPopup').style.display = 'none';
-    });
-
-    // Close the popup if clicking outside of it
-    window.addEventListener('click', function(event) {
-      if (event.target === document.getElementById('loginPopup')) {
-        document.getElementById('loginPopup').style.display = 'none';
-      }
-    });
-
-    // Navigate to second_page.html on login
-    document.getElementById('loginButton').addEventListener('click', function() {
-      window.location.href = 'homepage.html';
-    });
-
-    document.getElementById('menuLink').addEventListener('click', function(event) {
-      event.preventDefault();
-      const dropdownMenu = document.getElementById('dropdownMenu');
-      const isVisible = dropdownMenu.style.display === 'block';
-      
-      // Hide all dropdown menus
-      document.querySelectorAll('.dropdown-menu').forEach(menu => menu.style.display = 'none');
-      
-      // Toggle the clicked dropdown menu
-      dropdownMenu.style.display = isVisible ? 'none' : 'block';
-    });
-    
-    // Close the dropdown if clicking outside of it
-    window.addEventListener('click', function(event) {
-      if (!event.target.matches('#menuLink')) {
-        document.querySelectorAll('.dropdown-menu').forEach(menu => menu.style.display = 'none');
-      }
-    });
-    
-  </script>
-  
-</body>
-</html>
-
+<!-- Footer -->
+<footer>
+  <p>&copy; 2024 Voyager. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  <div class="social-icons">
+    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.reddit.com" target="_blank"><i class="fab fa-reddit"></i></a>
+    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-      const menuButton = document.getElementById('menuButton');
-      const dropdownMenu = document.getElementById('dropdownMenu');
-  
-      menuButton.addEventListener('click', () => {
-          // Toggle the display of the dropdown menu
-          if (dropdownMenu.style.display === 'block') {
-              dropdownMenu.style.display = 'none';
-          } else {
-              dropdownMenu.style.display = 'block';
-          }
-      });
-  
-      // Hide the dropdown menu if clicking outside
-      document.addEventListener('click', (event) => {
-          if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-              dropdownMenu.style.display = 'none';
-          }
-      });
+    const menuButton = document.getElementById('menuButton');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    menuButton.addEventListener('click', () => {
+      // Toggle the display of the dropdown menu
+      dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Hide the dropdown menu if clicking outside of it
+    document.addEventListener('click', (event) => {
+      if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = 'none';
+      }
+    });
   });
-  </script>
-  
+
+
+  document.getElementById('reset-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    // Reset all filter fields to their default values
+    const filterFields = document.querySelectorAll('.filter-section input, .filter-section select');
+    filterFields.forEach(field => {
+        if (field.tagName === 'SELECT') {
+            field.selectedIndex = 0; // Reset to first option
+        } else {
+            field.value = ''; // Clear input fields
+        }
+    });
+});
+
+
+// Handle BHK type selection
+const bhkTypes = document.querySelectorAll('.bhk-type');
+
+bhkTypes.forEach(bhk => {
+    bhk.addEventListener('click', function() {
+        // Remove the selected class from all BHK types
+        bhkTypes.forEach(item => item.classList.remove('selected'));
+
+        // Add the selected class to the clicked BHK type
+        this.classList.add('selected');
+
+        // You can also store the selected value if needed
+        const selectedValue = this.getAttribute('data-value');
+        console.log("Selected BHK Type:", selectedValue); // Replace with your logic
+    });
+});
+
+
+
+
+</script>
+
+</body>
+</html>
