@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voyager - Click and Earn</title>
+  <link rel="icon" href="logo2.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 20px;
+    }
+
+    .menu-container {
+      position: relative;
+    }
+
+    .menu-button {
+      display: flex;
+      align-items: center;
+      background-color: #555;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      margin-right: 10px;
+    }
+
+    .line {
+      width: 20px;
+      height: 2px;
+      background-color: white;
+      margin: 3px 0;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      color: #333;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f0f0f0;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      padding: 15px 20px;
+    }
+
+    .social-icons {
+      padding: 20px;
+      background-color: #334a5c;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      font-size: 24px;
+    }
+
+    .social-icons a:hover {
+      color: #FFD700;
+    }
+
+    .main-content {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #ffffff;
+    }
+
+    .banner-image {
+      width: 100%;
+      max-width: 1200px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .refer-section,
+    .how-to-section,
+    .or-divider {
+      padding: 30px 20px;
+    }
+
+    .enter-details-btn {
+      background-color: #00cc66;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form label {
+      margin-top: 10px;
+    }
+
+    #openModal {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: hidden; /* Prevent scrolling */
+      background-color: rgba(0,0,0,0.4); 
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 0; /* Remove margin */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; 
+      max-width: 500px; 
+      border-radius: 8px;
+      position: absolute; /* Set position to absolute */
+      top: 50%; /* Position top at 50% */
+      left: 50%; /* Position left at 50% */
+      transform: translate(-50%, -50%); /* Translate to center */
+    }
+    
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: red; /* Change color on hover */
+    }
+
+    .close:focus {
+      color: black;
+      text-decoration: none;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .submit-btn {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: #ff1a1a;
+    }
+
+    .contact-input {
+      display: flex;
+      align-items: center;
+    }
+    
+    .contact-input select {
+      width: 25%; /* Adjust width as necessary */
+      padding: 10px;
+      margin-right: 5px; /* Space between dropdown and input */
+    }
+    
+    .contact-input input {
+      flex: 1; /* Take remaining space */
+    }
+
+    .custom-dropdown {
+      background-color: #fefefe; /* Match background color */
+      padding: 10px; /* Match padding */
+      position: relative;
+      display: inline-block;
+      width: 15%;
+      border-radius: 8px; /* Match border radius */
+      padding: 4px;
+      height: auto; /* Allow for flexibility, but we’ll set height below */
+      
+    }
+    
+    
+   
+    
+    .selected {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    
+    .options {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      width: 100%;
+      z-index: 1000;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    
+    .option {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    .option:hover {
+      background-color: #f0f0f0;
+    }
+    .modal-content h2 {
+      text-align: left; /* Aligns the heading to the left */
+      margin: 0; /* Removes default margin */
+      border-bottom: 2px solid #ccc; /* Adjust thickness and color as needed */
+      padding-bottom: 10px; /* Adds space between the heading and the line */
+  }
+  .modal-content p {
+    margin-top: 10px; /* Adds space above the paragraph */
+    text-align: left; /* Aligns the text to the left */
+    font-size: 14px; /* Adjust font size */
+    color: #555; /* Change text color */
+    font-weight: normal; /* Set weight to normal */
+}
+
+
+  
+  
+
+    
+    
+    
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="homepage.html">
+      <img src="logo2.png" alt="Your Logo" style="height: 100px;">
+    </a>
+    <nav>
+      <div class="menu-container">
+        <div class="menu-button" id="menuButton">
+          <div class="menu-icon">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <span class="menu-text">Menu</span>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="#">Post Your Property</a>
+          <a href="#">Rental Agreement</a>
+          <a href="#">Packer & Movers</a>
+          <a href="#">Refer a Friend</a>
+          <a href="#">Blog</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="main-content">
+    <div class="image-section">
+      <img src="Background_Images/Picture2.jpg" alt="Referral Banner" class="banner-image">
+    </div>
+
+    <div class="refer-section">
+      <p>Click a Pic or Refer owner details to <strong>earn up to ₹120</strong> for every property listing we publish.</p>
+    </div>
+
+    <div class="how-to-section">
+      <h2>Cool! How do I do it?</h2>
+      <p>Share contact details of the property owner and get rewarded</p>
+      <button class="enter-details-btn" id="openModal">Enter Owner Details</button>
+    </div>
+
+    <div class="or-divider">
+      <p>OR</p>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Refer & Earn</h2>
+        <p><strong>Provide Owner Contact & Get up to ₹120 in your account directly</strong></p>
+        <p>Please enter correct owner's name & phone to ensure faster response from us.</p>
+    <form>
+        <form>
+          
+          <select id="city" required>
+            <option value="" disabled selected>Select City</option>
+            <option value="City1">City 1</option>
+            <option value="City2">City 2</option>
+            <!-- Add more cities as needed -->
+          </select>
+
+          
+          <input type="tel" id="contact" placeholder="Owner Contact Number" required>
+
+          
+      <!-- Custom Country Code Dropdown with Flags -->
+
+<div class="contact-input">
+  <div class="custom-dropdown">
+    <div class="selected" id="selectedCountry">
+      <img src="Background_Images/indiaflag.jpg" alt="🇮🇳" style="width: 20px;"> +91
+    </div>
+    <div class="options" id="countryDropdown">
+      <div class="option" data-value="+91" data-flag="bag">
+        <img src="Background_Images/indiaflag.jpg" alt="🇮🇳" style="width: 20px;"> +91
+      </div>
+      <div class="option" data-value="+977" data-flag="Background_Images/Nepal flag.jpg">
+        <img src="Background_Images/Nepal flag.jpg" alt="🇳🇵" style="width: 20px;"> +977
+      </div>
+      <div class="option" data-value="+975" data-flag="path/to/bhutan-flag.png">
+        <img src="Background_Images/indiaflag.jpg" alt="🇧🇹" style="width: 20px;"> +975
+      </div>
+      <div class="option" data-value="+1" data-flag="Background_Images/USA Flag.jpg">
+        <img src="Background_Images/USA Flag.jpg" alt="🇺🇸" style="width: 20px;"> +1
+      </div>
+    </div>
+  </div>
+  <input type="tel" id="contact" placeholder="Owner Contact Number" required>
+</div>
+
+
+          
+          <select id="propertyType" required>
+            <option value="" disabled selected>Select Property Type</option>
+            <option value="Type1">Type 1</option>
+            <option value="Type2">Type 2</option>
+            <!-- Add more property types as needed -->
+          </select>
+
+          
+          <textarea id="details" rows="3" placeholder="Tell us more..."></textarea>
+
+          <button type="submit" class="submit-btn">Send Details</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Voyager. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.reddit.com" target="_blank"><i class="fab fa-reddit"></i></a>
+      <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById('menuButton');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      const modal = document.getElementById('modal'); 
+      const openModalButton = document.getElementById('openModal');
+      const closeButton = document.querySelector('.close');
+
+      menuButton.addEventListener('click', () => {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+      });
+
+      openModalButton.addEventListener('click', () => {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      });
+
+      closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; // Restore scrolling
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = ''; // Restore scrolling
+        }
+      });
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const selected = document.getElementById("selectedCountry");
+      const optionsContainer = document.getElementById("countryDropdown");
+      const optionsList = optionsContainer.querySelectorAll(".option");
+    
+      selected.addEventListener("click", () => {
+        optionsContainer.style.display = optionsContainer.style.display === "block" ? "none" : "block";
+      });
+    
+      optionsList.forEach(option => {
+        option.addEventListener("click", () => {
+          const countryValue = option.getAttribute("data-value");
+          const flagSrc = option.getAttribute("data-flag");
+    
+          selected.innerHTML = `<img src="${flagSrc}" alt="flag" style="width: 20px;"> ${countryValue}`;
+          optionsContainer.style.display = "none";
+    
+          // Optionally, you can set the input value to include the country code
+          document.getElementById("contact").value = countryValue;
+        });
+      });
+    
+      // Close dropdown if clicked outside
+      document.addEventListener("click", (e) => {
+        if (!selected.contains(e.target) && !optionsContainer.contains(e.target)) {
+          optionsContainer.style.display = "none";
+        }
+      });
+    });
+    
+  </script>
+</body>
+</html>
