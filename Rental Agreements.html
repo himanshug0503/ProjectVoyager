@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voyager - Click and Earn</title>
+  <link rel="icon" href="logo2.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between; /* Space between logo and menu */
+      align-items: center;
+      padding: 13px 20px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center; /* Center the logo vertically */
+    }
+
+    .menu-container {
+      position: relative;
+    }
+
+    .menu-button {
+      display: flex;
+      align-items: center;
+      background-color: #555;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      margin-right: 10px;
+    }
+
+    .line {
+      width: 20px;
+      height: 2px;
+      background-color: white;
+      margin: 3px 0;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      color: #333;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f0f0f0;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      padding: 15px 20px;
+    }
+
+    .social-icons {
+      padding: 20px;
+      background-color: #334a5c;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      font-size: 24px;
+    }
+
+    .social-icons a:hover {
+      color: #FFD700;
+    }
+
+    .main-content {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #ffffff;
+    }
+
+    h1, h2, h3 {
+      color: #334a5c;
+      text-align: left; /* Align headings to the left */
+      margin-left: 20px; /* Add margin to the left */
+    }
+
+    p {
+      color: #333;
+      text-align: left; /* Align paragraph to the left */
+      margin-left: 20px; /* Add margin to the left */
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column; /* Stack texts vertically */
+      align-items: flex-start; /* Align items to the left */
+      justify-content: center; /* Center vertically */
+      width: 100%; /* Full width */
+      padding: 0 20px; /* Optional padding for alignment */
+    }
+
+    .availability-text {
+      font-size: 18px; /* Adjust font size as needed */
+      margin-top: 5px; /* Space above the paragraph */
+      color: orange; /* Set text color to orange */
+      display: flex; /* Use flexbox to align the image next to the text */
+      align-items: center; /* Center vertically */
+    }
+
+    .availability-text img {
+      margin-left: 10px; /* Space between text and image */
+      height: 30px; /* Adjust the height of the image as needed */
+    }
+
+    .renew-button {
+      width: 300px; /* Increased width of the button */
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 10px; /* Padding around the text */
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px; /* Space above the button */
+      border-radius: 5px; /* Rounded corners */
+      display: flex; /* Use flexbox for button */
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center align items */
+      text-align: center; /* Center text */
+    }
+
+    .renew-button-content {
+      display: flex; /* Use flexbox for content alignment */
+      align-items: center; /* Center align items vertically */
+    }
+
+    .renew-button img {
+      margin: 0 8px; /* Space between image and text */
+      height: 20px; /* Adjust image height */
+    }
+
+    .renew-subtext {
+      color: grey; /* Grey color for subtext */
+      font-size: 14px; /* Smaller font size for subtext */
+      margin-top: 2px; /* Space above the subtext */
+    }
+
+    .renew-button:hover {
+      background-color: #ff1a1a; /* Darker shade on hover */
+    }
+
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: hidden; 
+      background-color: rgba(0,0,0,0.4); 
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; 
+      max-width: 500px; 
+      border-radius: 8px;
+      position: absolute; 
+      top: 50%; 
+      left: 50%; 
+      transform: translate(-50%, -50%); 
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: red; 
+    }
+
+    .submit-btn {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: #ff1a1a;
+    }
+
+    .contact-input {
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-input select {
+      width: 25%;
+      padding: 10px;
+      margin-right: 5px; 
+    }
+
+    .contact-input input {
+      flex: 1; 
+    }
+  
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <a href="homepage.html">
+        <img src="logo2.png" alt="Your Logo" style="height: 100px;">
+      </a>
+    </div>
+    <div class="menu-container">
+      <div class="menu-button" id="menuButton">
+        <div class="menu-icon">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <span class="menu-text">Menu</span>
+      </div>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">Post Your Property</a>
+        <a href="#">Rental Agreement</a>
+        <a href="#">Packer & Movers</a>
+        <a href="#">Refer a Friend</a>
+        <a href="#">Blog</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="text-container">
+    <h1>Online Rent Agreement in Bangalore</h1>
+    <p class="availability-text">
+      Now available in 150+ cities in India
+      <img src="https://assets.nobroker.in/hs-new/public/LegalServiceNew/legalPageCity.gif" alt="Cities GIF">
+    </p>
+    <button class="renew-button">
+      <div class="renew-button-content">
+        <img src="https://assets.nobroker.in/hs-new/public/LegalServiceNew/renew.svg" alt="Renew Icon"> <!-- Image added to button -->
+        Renew your agreement
+      </div>
+      <span class="renew-subtext">Renew your existing agreement</span> <!-- Subtext below main button text -->
+      <img src="https://assets.nobroker.in/hs-new/public/LegalServiceNew/leftAero.svg" alt="Arrow Icon" style="margin-top: 5px;"> <!-- Arrow icon on the right -->
+    </button>
+  </div>
+
+  <!-- New Section -->
+  <div class="text-container">
+    <h2>Select a Rent Agreement</h2>
+    <div class="contact-input">
+      <select>
+        <option value="oneBHK">1 BHK</option>
+        <option value="twoBHK">2 BHK</option>
+        <option value="threeBHK">3 BHK</option>
+        <option value="commercial">Commercial</option>
+      </select>
+      <input type="text" placeholder="Enter location..." required>
+      <button class="submit-btn">Submit</button>
+    </div>
+  </div>
+
+  <hr style="margin: 20px 0; border: 0; height: 2px; background-color: #334a5c;"> <!-- Horizontal line -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.reddit.com" target="_blank"><i class="fab fa-reddit"></i></a>
+      <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById('menuButton');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      
+      // Menu Button Event
+      menuButton.addEventListener('click', () => {
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>

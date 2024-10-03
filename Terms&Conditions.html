@@ -283,6 +283,68 @@
     color: #555; /* Change text color */
     font-weight: normal; /* Set weight to normal */
 }
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2, h3 {
+  color: #334a5c;
+}
+p {
+  color: #333;
+}
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  color: #333;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 20px;
+  font-size: 1.5em;
+}
+
+p {
+  margin: 10px 0;
+}
+
+ul {
+  margin: 10px 0 10px 20px;
+}
+
+strong {
+  color: #555;
+}
+
 footer a {
   color: lightblue;
   text-decoration: none; /* Optional: Removes underline */
@@ -291,6 +353,7 @@ footer a {
 footer a:hover {
   text-decoration: underline; /* Optional: Adds underline on hover */
 }
+
 
 
   
@@ -329,165 +392,110 @@ footer a:hover {
     </nav>
   </header>
 
-  <section class="main-content">
-    <div class="image-section">
-      <img src="Background_Images/Picture2.jpg" alt="Referral Banner" class="banner-image">
-    </div>
+    
+  <div class="container">
+    <h1>Terms of Service</h1>
+    <p><strong>Effective Date: [Insert Date]</strong></p>
+    
+    <h2>1. Acceptance of Terms</h2>
+    <p>By using this website, you affirm that you are at least 18 years old or have the consent of a parent or guardian. If you are using this site on behalf of a company or organization, you represent that you have the authority to bind that entity to these Terms of Service.</p>
 
-    <div class="refer-section">
-      <p>Click a Pic or Refer owner details to <strong>earn up to ₹120</strong> for every property listing we publish.</p>
-    </div>
+    <h2>2. Changes to Terms</h2>
+    <p>We reserve the right to modify these Terms of Service at any time. Any changes will be effective immediately upon posting on this page. Your continued use of the website after such changes constitutes your acceptance of the new Terms of Service.</p>
 
-    <div class="how-to-section">
-      <h2>Cool! How do I do it?</h2>
-      <p>Share contact details of the property owner and get rewarded</p>
-      <button class="enter-details-btn" id="openModal">Enter Owner Details</button>
-    </div>
+    <h2>3. User Accounts</h2>
+    <p>To access certain features of our website, you may be required to create an account. You agree to:</p>
+    <ul>
+        <li>Provide accurate, current, and complete information during the registration process.</li>
+        <li>Maintain the security of your password and account.</li>
+        <li>Notify us immediately of any unauthorized use of your account or any other breach of security.</li>
+    </ul>
 
-    <div class="or-divider">
-      <p>OR</p>
-    </div>
+    <h2>4. Use of the Website</h2>
+    <p>You agree to use the website only for lawful purposes and in accordance with these Terms of Service. You agree not to:</p>
+    <ul>
+        <li>Use the website in any way that violates any applicable federal, state, local, or international law or regulation.</li>
+        <li>Transmit any advertising or promotional material, including any "junk mail," "chain letter," "spam," or any other similar solicitation.</li>
+        <li>Engage in any conduct that restricts or inhibits anyone's use or enjoyment of the website.</li>
+    </ul>
 
-    <!-- Modal Structure -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Refer & Earn</h2>
-        <p><strong>Provide Owner Contact & Get up to ₹120 in your account directly</strong></p>
-        <p>Please enter correct owner's name & phone to ensure faster response from us.</p>
-    <form>
-        <form>
-          
-          <select id="city" required>
-            <option value="" disabled selected>Select City</option>
-            <option value="City1">City 1</option>
-            <option value="City2">City 2</option>
-            <!-- Add more cities as needed -->
-          </select>
+    <h2>5. Intellectual Property Rights</h2>
+    <p>The content, layout, design, data, and graphics on this website are owned by [Your Website Name] or licensed to us and are protected by intellectual property laws. You may not reproduce, distribute, modify, or otherwise use any content without our prior written consent.</p>
 
-          
-          <input type="tel" id="contact" placeholder="Owner Contact Number" required>
+    <h2>6. Third-Party Links</h2>
+    <p>Our website may contain links to third-party websites that are not owned or controlled by [Your Website Name]. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites.</p>
 
-          
-      <!-- Custom Country Code Dropdown with Flags -->
+    <h2>7. Limitation of Liability</h2>
+    <p>In no event shall [Your Website Name], its affiliates, directors, employees, or agents be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, use, goodwill, or other intangible losses.</p>
 
-<div class="contact-input">
-  <div class="custom-dropdown">
-    <div class="selected" id="selectedCountry">
-      <img src="Background_Images/indiaflag.jpg" alt="🇮🇳" style="width: 20px;"> +91
-    </div>
-    <div class="options" id="countryDropdown">
-      <div class="option" data-value="+91" data-flag="bag">
-        <img src="Background_Images/indiaflag.jpg" alt="🇮🇳" style="width: 20px;"> +91
-      </div>
-      <div class="option" data-value="+977" data-flag="Background_Images/Nepal flag.jpg">
-        <img src="Background_Images/Nepal flag.jpg" alt="🇳🇵" style="width: 20px;"> +977
-      </div>
-      <div class="option" data-value="+975" data-flag="ackground_Images/Bhutan Flag.png">
-        <img src="Background_Images/Bhutan Flag.png" alt="🇧🇹" style="width: 20px;"> +975
-      </div>
-      <div class="option" data-value="+1" data-flag="Background_Images/USA Flag.jpg">
-        <img src="Background_Images/USA Flag.jpg" alt="🇺🇸" style="width: 20px;"> +1
-      </div>
-    </div>
-  </div>
-  <input type="tel" id="contact" placeholder="Owner Contact Number" required>
+    <h2>8. Indemnification</h2>
+    <p>You agree to defend, indemnify, and hold harmless [Your Website Name], its affiliates, licensors, and service providers from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees arising out of or relating to your violation of these Terms of Service.</p>
+
+    <h2>9. Governing Law</h2>
+    <p>These Terms of Service shall be governed by and construed in accordance with the laws of [Your Country/State].</p>
+
+    <h2>10. Contact Information</h2>
+    <p>If you have any questions about these Terms of Service, please contact us at:</p>
+    <p><strong>Name: Himanshu</strong></p>
+        <p><strong>Chief Executive Officer</strong></p>
+        <p><strong>Contact Number: 910536****</strong></p>
+        <p><strong>Email Id: mail.voyagers.com</strong></p>
 </div>
-
-
-          
-          <select id="propertyType" required>
-            <option value="" disabled selected>Select Property Type</option>
-            <option value="Type1">Type 1</option>
-            <option value="Type2">Type 2</option>
-            <!-- Add more property types as needed -->
-          </select>
-
-          
-          <textarea id="details" rows="3" placeholder="Tell us more..."></textarea>
-
-          <button type="submit" class="submit-btn">Send Details</button>
-        </form>
-      </div>
-    </div>
-  </section>
+    
+      
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Voyager. All rights reserved. | <a href="PrivacyPolicy.html">Privacy Policy</a> | <a href="Terms&Conditions.html">Terms of Service</a></p>
-  </footer>
-
-  
-  <footer>
-    <div class="social-icons">
-        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.reddit.com" target="_blank"><i class="fab fa-reddit"></i></a>
-        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-    </div>
+<footer>
+ 
 </footer>
+
+
+<footer>
+  <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.reddit.com" target="_blank"><i class="fab fa-reddit"></i></a>
+      <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
+
+
+
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const menuButton = document.getElementById('menuButton');
       const dropdownMenu = document.getElementById('dropdownMenu');
-      const modal = document.getElementById('modal'); 
+      const modal = document.getElementById('modal');
       const openModalButton = document.getElementById('openModal');
       const closeButton = document.querySelector('.close');
-
+    
+      // Menu Button Event
       menuButton.addEventListener('click', () => {
         dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
       });
-
+    
+      // Modal Logic
       openModalButton.addEventListener('click', () => {
         modal.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        document.body.style.overflow = 'hidden';
       });
-
+    
       closeButton.addEventListener('click', () => {
         modal.style.display = 'none';
-        document.body.style.overflow = ''; // Restore scrolling
+        document.body.style.overflow = '';
       });
-
+    
       window.addEventListener('click', (event) => {
         if (event.target === modal) {
           modal.style.display = 'none';
-          document.body.style.overflow = ''; // Restore scrolling
+          document.body.style.overflow = '';
         }
       });
     });
-
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const selected = document.getElementById("selectedCountry");
-      const optionsContainer = document.getElementById("countryDropdown");
-      const optionsList = optionsContainer.querySelectorAll(".option");
     
-      selected.addEventListener("click", () => {
-        optionsContainer.style.display = optionsContainer.style.display === "block" ? "none" : "block";
-      });
-    
-      optionsList.forEach(option => {
-        option.addEventListener("click", () => {
-          const countryValue = option.getAttribute("data-value");
-          const flagSrc = option.getAttribute("data-flag");
-    
-          selected.innerHTML = `<img src="${flagSrc}" alt="flag" style="width: 20px;"> ${countryValue}`;
-          optionsContainer.style.display = "none";
-    
-          // Optionally, you can set the input value to include the country code
-          document.getElementById("contact").value = countryValue;
-        });
-      });
-    
-      // Close dropdown if clicked outside
-      document.addEventListener("click", (e) => {
-        if (!selected.contains(e.target) && !optionsContainer.contains(e.target)) {
-          optionsContainer.style.display = "none";
-        }
-      });
-    });
     
   </script>
 </body>
