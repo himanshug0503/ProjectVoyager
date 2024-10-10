@@ -63,7 +63,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: 80vh;
       color: white;
       text-align: center;
     }
@@ -486,6 +486,160 @@ footer a:hover {
 }
 
 
+.center-box {
+  width: 600px;
+  height: 700px;
+  background-image: url('prop1.jpeg'); /* Replace with your box background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+/* Logo positioning */
+.logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px; /* Adjust the width of the logo */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Home icon and text inside the box */
+.home-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* Styling the icon */
+.home-link i {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+/* Main header positioned below the home link */
+.center-box h1 {
+  font-size: 32px;
+  color: white; /* Adjust text color for contrast */
+  margin: 60px 0 0 0;
+}
+
+/* Subtext under the header */
+.center-box p {
+  font-size: 18px;
+  color: white; /* Adjust text color for contrast */
+  margin: 10px 0 20px 0;
+}
+
+/* Flex container for the search bar and button */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the search box */
+  width: 100%;
+  margin-top: 330px; /* Adjusted to move it lower */
+  margin-bottom: 40px; /* Increased bottom margin for spacing */
+}
+
+/* Make the search box circular and reduce its width */
+.search-container input[type="text"] {
+  padding: 10px 20px;
+  width: 60%; /* Adjust width as needed */
+  max-width: 250px; /* Limit maximum width */
+  border: 1px solid #ccc;
+  border-radius: 50px; /* Circular shape */
+  font-size: 16px;
+  outline: none;
+}
+
+/* Style the button next to the search box */
+.search-container input[type="submit"] {
+  padding: 8px 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px; /* Small gap between input and button */
+  flex-shrink: 0; /* Ensure the button doesn't shrink */
+}
+
+/* Button hover effect */
+.search-container input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Image slider container */
+.image-slider {
+  width: 100%;
+  height: 150px;
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Slider wrapper to allow sliding */
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+/* Each image styling */
+.image-slider img {
+  width: 18%; /* Set the width to make images smaller */
+  margin-right: 10px; /* Add space between images */
+  border-radius: 5px; /* Optional: Add rounded corners to images */
+}
+
+/* Remove margin from the last image */
+.image-slider img:last-child {
+  margin-right: 0; /* No margin on the last image */
+}
+
+/* Icons container */
+.icon-container {
+  display: flex;
+  justify-content: center; /* Center the icons */
+  width: 100%;
+  margin-top: -25px; /* Adjusted to move closer to the search box */
+}
+
+.icon {
+  flex: 1;
+  text-align: center;
+  margin: 0 3px; /* Reduced spacing between icons */
+}
+
+.icon i {
+  font-size: 16px; /* Reduced size of the icons */
+  color: white; /* Color of the icons */
+  margin-bottom: 2px; /* Reduced space below the icon */
+}
+
+.icon div {
+  font-size: 12px; /* Reduced size of the text below the icons */
+  color: white; /* Color of the text below the icons */
+}
+
+
+
   </style>
 </head>
 <body>
@@ -517,30 +671,70 @@ footer a:hover {
 
 
   <!-- Page Container -->
-  <div class="page-container">
-    
-    
-    <!-- Page 1 (First Page) -->
-    <div class="welcome-text">
-      Welcome to Voyager!!
-  </div>
-    
   <div class="page-1">
-    <div class="form-container">
-      <select>
-        <option value="" disabled selected>Select an option</option>
-        <option value="1">Bangalore</option>
-        <option value="2">Delhi</option>
-        <option value="3">Chandigarh</option>
-      </select>
-      <input type="text" placeholder="Enter text here">
-      
-      <!-- Wrap the button inside an anchor tag -->
-      <a href="Filters.html">
-        <button class="search-button"><i class="fas fa-search"></i> Search</button>
-      </a>
+    <div class="center-box">
+    <!-- Page 1 (First Page) -->
+    <!-- Logo in the top right corner -->
+        <img src="logo2.png" alt="Logo" class="logo"> <!-- Replace with your logo image -->
+
+        <!-- Home Icon and Text inside the Box -->
+        <a href="#" class="home-link">
+            <i class="fas fa-home"></i> Home
+        </a>
+
+        <h1>Find Your Room</h1>
+        <p>Find your room today</p>
+        
+        <!-- Search Bar -->
+        <form action="Filters.html" method="GET" class="search-container">
+            <input type="text" placeholder="Type to search..." name="search">
+            <input type="submit" value="Search">
+        </form>
+
+
+        <!-- Icons below the search bar -->
+        <div class="icon-container">
+            <div class="icon">
+                <i class="fas fa-door-open"></i>
+                <div>Rooms</div>
+            </div>
+            <div class="icon">
+                <i class="fas fa-users"></i>
+                <div>Friends</div>
+            </div>
+            <div class="icon">
+                <i class="fas fa-star"></i>
+                <div>Favorites</div>
+            </div>
+            <div class="icon">
+                <i class="fas fa-comments"></i>
+                <div>Chat</div>
+            </div>
+            <div class="icon">
+                <i class="fas fa-cog"></i>
+                <div>Settings</div>
+            </div>
+        </div>
+
+        <!-- Image Slider -->
+        <div class="image-slider">
+            <div class="slider-wrapper" id="slider">
+                <img src="image34.jpg" alt="Image 1">
+                <img src="image12.jpg" alt="Image 2">
+                <img src="image35.jpg" alt="Image 3">
+                <img src="image12.jpg" alt="Image 4">
+                <img src="image34.jpg" alt="Image 5">
+                <img src="image35.jpg" alt="Image 6">
+                <img src="image34.jpg" alt="Image 7">
+                <img src="image34.jpg" alt="Image 8">
+                <img src="image34.jpg" alt="Image 9">
+                <img src="image34.jpg" alt="Image 10">
+            </div>
+        </div>
     </div>
   </div>
+</body>  
+
 
     <!-- Page 2 (Second Page) -->
     <div class="page-2">
@@ -761,6 +955,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // Set interval for automatic sliding
   setInterval(slideTestimonials, 4000); // Change slides every 4 seconds
 });
+
+const slider = document.getElementById('slider');
+const sliderWrapper = document.querySelector('.slider-wrapper');
+const images = slider.getElementsByTagName('img');
+let currentIndex = 0;
+
+// Function to show the current set of images
+function showImages(index) {
+    sliderWrapper.style.transform = `translateX(-${index * (100 / 5)}%)`; // Move the slider
+}
+
+// Function to automatically switch images
+function autoSlide() {
+    currentIndex = (currentIndex + 1) % (images.length - 4); // Adjust for loop with 10 images
+    showImages(currentIndex);
+}
+
+// Start the automatic sliding every 5 seconds
+setInterval(autoSlide, 5000);
+
 
 
   </script>
