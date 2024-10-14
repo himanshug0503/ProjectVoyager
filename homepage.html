@@ -57,17 +57,18 @@
 
     /* First Page */
     .page-1 {
-      background-image: url('Background_Images/image34.jpg');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 80vh;
-      color: white;
-      text-align: center;
-    }
-
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('image34.jpg'); /* Replace with your page background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
     .form-container {
       background: #fff;
       padding: 20px;
@@ -514,97 +515,105 @@ footer a:hover {
   text-decoration: underline; /* Optional: Adds underline on hover */
 }
 
+/* Dynamic resizing of the center box */
 .center-box {
-  width: 600px;
-  height: 700px;
-  background-image: url('Prop1.jpeg'); /* Replace with your box background image */
+  width: 80%; /* Box width adjusts with screen width */
+  max-width: 600px; /* Maximum width limit for larger screens */
+  min-width: 300px; /* Minimum width for smaller screens */
+  height: 70%; /* Box height adjusts with screen height */
+  max-height: 80vh; /* Maximum height limit */
+  min-height: 50vh; /* Minimum height */
+  background-image: url('prop1.jpeg'); /* Box background image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between; /* Ensures elements are spaced top-to-bottom */
   align-items: center;
   position: relative;
 }
 
 /* Logo positioning */
+/* Adjusted logo position and size */
 .logo {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 50px; /* Adjust the width of the logo */
-  height: auto; /* Maintain aspect ratio */
+  top: 15px;
+  right: 15px;
+  width: 40px; /* Logo size remains the same */
+  height: auto;
 }
 
 /* Home icon and text inside the box */
+
 .home-link {
   display: flex;
   align-items: center;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 15px;
+  left: 15px;
 }
 
-/* Styling the icon */
+/* Styling the home icon */
 .home-link i {
-  margin-right: 10px;
-  font-size: 22px;
+  margin-right: 8px;
+  font-size: 20px;
 }
 
-/* Main header positioned below the home link */
+/* Main header */
 .center-box h1 {
-  font-size: 32px;
-  color: white; /* Adjust text color for contrast */
-  margin: 60px 0 0 0;
+  font-size: 2.5vw; /* Responsive font size relative to viewport width */
+  color: white;
+  margin: 50px 0 0 0;
 }
 
-/* Subtext under the header */
+/* Subtext */
 .center-box p {
-  font-size: 18px;
-  color: white; /* Adjust text color for contrast */
-  margin: 10px 0 20px 0;
+  font-size: 1.2vw; /* Responsive font size relative to viewport width */
+  color: white;
+  margin: 8px 0 15px 0;
 }
 
-/* Flex container for the search bar and button */
+
+/* Search box container */
 .search-container {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center the search box */
+  justify-content: center;
   width: 100%;
-  margin-top: 330px; /* Adjusted to move it lower */
-  margin-bottom: 40px; /* Increased bottom margin for spacing */
+  margin-top: 250px; /* 100px from top of the box */
+  margin-bottom: 15px;
 }
 
-/* Make the search box circular and reduce its width */
+
+/* Search box styling */
 .search-container input[type="text"] {
-  padding: 10px 20px;
-  width: 60%; /* Adjust width as needed */
-  max-width: 250px; /* Limit maximum width */
+  padding: 8px 15px;
+  width: 60%;
+  max-width: 300px; /* Adjusts to screen size */
   border: 1px solid #ccc;
-  border-radius: 50px; /* Circular shape */
-  font-size: 16px;
+  border-radius: 50px;
+  font-size: 1vw; /* Responsive font size */
   outline: none;
 }
 
-/* Style the button next to the search box */
+/* Search button */
 .search-container input[type="submit"] {
-  padding: 8px 12px;
+  padding: 6px 10px;
   background-color: #007BFF;
   color: white;
   border: none;
   border-radius: 50px;
-  font-size: 14px;
+  font-size: 0.8vw; /* Responsive font size */
   cursor: pointer;
-  margin-left: 10px; /* Small gap between input and button */
-  flex-shrink: 0; /* Ensure the button doesn't shrink */
+  margin-left: 8px;
 }
 
 /* Button hover effect */
@@ -615,14 +624,14 @@ footer a:hover {
 /* Image slider container */
 .image-slider {
   width: 100%;
-  height: 150px;
+  height: 100px; /* Reduced height */
   margin-top: auto;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
 }
 
-/* Slider wrapper to allow sliding */
+/* Slider wrapper */
 .slider-wrapper {
   display: flex;
   transition: transform 0.5s ease;
@@ -644,15 +653,16 @@ footer a:hover {
 /* Icons container */
 .icon-container {
   display: flex;
-  justify-content: center; /* Center the icons */
+  justify-content: center;
   width: 100%;
-  margin-top: -25px; /* Adjusted to move closer to the search box */
+  margin-top: 10px; /* 100px from top of the box */
+  margin-bottom: 10px; /* Slight margin at the bottom */
 }
 
 .icon {
   flex: 1;
   text-align: center;
-  margin: 0 3px; /* Reduced spacing between icons */
+  margin: 0 2px;
 }
 
 .icon i {
@@ -664,6 +674,63 @@ footer a:hover {
 .icon div {
   font-size: 12px; /* Reduced size of the text below the icons */
   color: white; /* Color of the text below the icons */
+}
+
+/* Media query for screens under 768px */
+@media (max-width: 768px) {
+  .center-box {
+      width: 90%;
+      max-width: 500px;
+      min-height: 60vh;
+  }
+
+  .center-box h1 {
+      font-size: 1.8em;
+  }
+
+  .center-box p {
+      font-size: 1em;
+  }
+
+  .search-container input[type="text"] {
+      width: 70%;
+  }
+
+  .icon-container i {
+      font-size: 1.2em;
+  }
+}
+
+/* Media query for screens under 480px */
+@media (max-width: 480px) {
+  .center-box {
+      padding: 10px;
+      min-height: 45vh;
+  }
+
+  .center-box h1 {
+      font-size: 1.4em;
+  }
+
+  .center-box p {
+      font-size: 0.9em;
+  }
+
+  .search-container input[type="text"] {
+      width: 65%;
+  }
+
+  .icon-container {
+      flex-direction: column;
+  }
+
+  .icon-container a {
+      margin-bottom: 10px;
+  }
+
+  .icon-container i {
+      font-size: 1.1em;
+  }
 }
 
 
@@ -726,27 +793,27 @@ footer a:hover {
 
         <!-- Icons below the search bar -->
         <div class="icon-container">
-            <div class="icon">
-                <i class="fas fa-door-open"></i>
-                <div>Rooms</div>
-            </div>
-            <div class="icon">
-                <i class="fas fa-users"></i>
-                <div>Friends</div>
-            </div>
-            <div class="icon">
-                <i class="fas fa-star"></i>
-                <div>Favorites</div>
-            </div>
-            <div class="icon">
-                <i class="fas fa-comments"></i>
-                <div>Chat</div>
-            </div>
-            <div class="icon">
-                <i class="fas fa-cog"></i>
-                <div>Settings</div>
-            </div>
-        </div>
+          <a href="rooms.html" class="icon">
+              <i class="fas fa-door-open"></i>
+              <div>Rooms</div>
+          </a>
+          <a href="second_webpage.html" class="icon">
+              <i class="fas fa-users"></i>
+              <div>Social Media</div>
+          </a>
+          <a href="Click and Earn.html" class="icon">
+              <i class="fas fa-star"></i>
+              <div>Click & Earn</div>
+          </a>
+          <a href="blog.html" class="icon">
+              <i class="fas fa-comments"></i>
+              <div>Blog</div>
+          </a>
+          <a href="settings.html" class="icon">
+              <i class="fas fa-cog"></i>
+              <div>Settings</div>
+          </a>
+      </div>
 
         <!-- Image Slider -->
         <div class="image-slider">

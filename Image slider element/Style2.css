@@ -1,0 +1,481 @@
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Page Container */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: rgb(255, 255, 255);
+  color: white;
+  padding: 13px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+header nav {
+  display: flex;
+  gap: 15px;
+}
+
+header nav a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #555;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+header nav a:hover {
+  background-color: #777;
+}
+
+/* First Page */
+.page-1 {
+  background-image: url('Background_Images/image34.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+}
+
+.form-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+select, input[type="text"] {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+select {
+  flex: 1;
+}
+
+input[type="text"] {
+  flex: 2;
+}
+
+.search-button {
+  background-color: #0866ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Second Page */
+.page-2 {
+  background-image: url('Background_Images/image35.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Ensures the background covers the entire viewport */
+  padding: 20px;
+  color: white; /* Adjust text color if needed */
+}
+
+/* Third Page */
+.page-3 {
+  background-color: #dcd7f1;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.circle-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 28px;
+}
+
+.texts-container {
+display: flex;
+justify-content: flex-start; /* Aligns text to the left */
+margin: 20px 0; /* Space above the text */
+gap: 240px; /* Optional: Adjusts the spacing between texts */
+}
+
+.circle-text {
+font-weight: bold;
+font-size: 16px; /* Adjust the font size as needed */
+margin-left: 145px; /* Move text slightly to the left */
+margin-left: 200px; /* Adjust the negative margin as needed */
+}
+
+.final-text {
+  margin-top: 35px; /* Space between the separate texts and the final statement */
+  font-weight: normal; /* Adjust the font weight as needed */
+  font-size: 22px; /* Adjust the font size as needed */
+  font-weight: bold; /* Makes the text bold */
+  
+}
+
+/* Fourth Page */
+.page-4 {
+  background-color: #334a5c;
+  padding: 50px 20px;
+  color: white;
+  text-align: center;
+}
+
+.customer-image {
+  width: 14cm;
+  height: 7cm;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Testimonials Section */
+.testimonials {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center; /* Center the testimonials */
+  overflow: hidden; /* Hides overflow to show only three tiles */
+}
+
+.testimonial-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap; /* Prevent wrapping for sliding effect */
+}
+
+.testimonial-tiles {
+  display: flex;
+  transition: transform 0.5s ease; /* Smooth transition */
+  width: fit-content; /* Adjust width automatically based on content */
+}
+
+.testimonial-tile {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px; /* Fixed width */
+  flex: 0 0 auto; /* Prevent flex items from shrinking */
+  margin: 0 10px; /* Space between tiles */
+}
+
+.testimonial-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.testimonial-tile h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #334a5c;
+}
+
+.testimonial-tile p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .testimonial-tile {
+      width: 90%; /* Make tiles full width on smaller screens */
+      margin: 10px 0; /* Add margin for spacing */
+  }
+
+  .testimonial-container {
+      flex-direction: column; /* Stack testimonials vertically */
+      align-items: center; /* Center align items */
+  }
+}
+
+.arrow {
+  position: absolute; /* Positioned relative to testimonials */
+  right: 10px; /* Adjust as needed */
+  cursor: pointer;
+  font-size: 2em;
+  color: #333;
+  user-select: none; /* Prevent text selection */
+}
+
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Popup Modal */
+.popup {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1200;
+}
+
+.popup-content {
+  display: flex;
+  width: 50%;
+  height: 400px;
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.popup-grey {
+  background-color: #eee;
+  width: 40%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-grey .icon {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.popup-grey ul {
+  list-style: none;
+  padding: 0;
+}
+
+.popup-grey ul li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.popup-grey ul li i {
+  color: #0866ff;
+  margin-right: 10px;
+}
+
+.popup-white {
+  background-color: #fff;
+  width: 60%;
+  padding: 20px;
+  text-align: center;
+}
+
+.popup-content .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.popup-white h1 {
+  margin: 0 0 20px;
+}
+
+.popup-white p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.popup-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-content input {
+  width: 80%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popup-content button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: orange;
+  color: white;
+  cursor: pointer;
+  width: 80%;
+  text-align: center;
+}
+.welcome-text {
+  position: absolute;
+  top: 350px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em; /* Adjust the font size as needed */
+  color: white; /* Choose a color that stands out on your background */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: add shadow for better readability */
+  z-index: 10; /* Ensure it's on top of other content */
+}
+
+/* Ensure the form-container has a z-index lower than the welcome text if needed */
+.form-container {
+  position: absolute;
+  top: 400px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5; /* Ensure this is lower than welcome text */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: background with transparency */
+  border-radius: 10px; /* Optional: rounded corners */
+}
+
+
+
+.social-icons {
+  text-align: center; /* Center the icons */
+  padding: 20px;
+  background-color: #334a5c; /* Example background color */
+}
+
+.social-icons a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white; /* Icon color */
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  color: #FFD700; /* Change color on hover */
+}
+
+/* Navigation and Menu Styles */
+nav {
+display: flex;
+gap: 15px;
+position: relative; /* Needed for absolute positioning of the dropdown */
+}
+
+.menu-container {
+position: relative;
+}
+.menu-text {
+font-size: 16px; /* Adjust font size as needed */
+}
+
+.menu-button {
+display: flex;
+align-items: center;
+background-color: #555; /* Adjust color as needed */
+color: white; /* Adjust color as needed */
+padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+text-decoration: none;
+}
+
+.menu-icon {
+display: flex;
+flex-direction: column;
+margin-right: 10px;
+}
+
+.line {
+width: 20px; /* Adjust width as needed */
+height: 2px; /* Adjust height as needed */
+background-color: white; /* Adjust color as needed */
+margin: 3px 0;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+display: none; /* Hide by default */
+position: absolute;
+top: 100%;
+left: 0;
+<!-- background-color: #fff; /* Adjust background color as needed */ -->
+color: #333; /* Adjust text color as needed */
+padding: 10px;
+border-radius: 5px;
+box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.dropdown-menu a {
+display: block;
+padding: 8px 16px;
+text-decoration: none;
+color: inherit;
+}
+
+.dropdown-menu a:hover {
+background-color: #f0f0f0; /* Adjust hover color as needed */
+}
+
+.popup-content button:hover {
+background-color: darkorange;
+}
+footer a {
+color: lightblue;
+text-decoration: none; /* Optional: Removes underline */
+}
+
+footer a:hover {
+text-decoration: underline; /* Optional: Adds underline on hover */
+}
+
+
+</style>
