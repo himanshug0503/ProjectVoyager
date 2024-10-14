@@ -57,16 +57,18 @@
 
     /* First Page */
     .page-1 {
-      background-image: url('Background_Images/image34.jpg');
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('image34.jpg'); /* Replace with your page background image */
       background-size: cover;
+      background-repeat: no-repeat;
       background-position: center;
+      height: 100vh; /* Full viewport height */
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 80vh;
-      color: white;
-      text-align: center;
-    }
+  }
 
     .form-container {
       background: #fff;
@@ -263,37 +265,49 @@
     }
 
     /* Popup Modal */
+    /* Popup Modal Styles */
     .popup {
-      display: none;
-      position: fixed;
+      display: none; /* Hide by default */
+      position: fixed; /* Stay in place */
+      z-index: 1000; /* Sit on top */
       left: 0;
       top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 1200;
-    }
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+  }
+  
+  .popup-content {
+    background-color: #fff; /* White background */
+    margin: auto; /* Center the modal */
+    padding: 20px; /* Padding around content */
+    border: 1px solid #888; /* Optional border */
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Set max width for large screens */
+    border-radius: 8px; /* Rounded corners */
+}
 
-    .popup-content {
-      display: flex;
-      width: 50%;
-      height: 400px;
-      background: white;
-      border-radius: 5px;
-      overflow: hidden;
-    }
+  .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
-    .popup-grey {
-      background-color: #eee;
-      width: 40%;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-grey {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+}
 
     .popup-grey .icon {
       font-size: 36px;
@@ -318,11 +332,10 @@
     }
 
     .popup-white {
-      background-color: #fff;
-      width: 60%;
-      padding: 20px;
-      text-align: center;
-    }
+      display: flex;
+      flex-direction: column; /* Arrange children vertically */
+      align-items: center; /* Center items horizontally */
+  }
 
     .popup-content .close-btn {
       position: absolute;
@@ -587,7 +600,7 @@ footer a:hover {
 /* Image slider container */
 .image-slider {
   width: 100%;
-  height: 150px;
+  height: 160px;
   margin-top: auto;
   position: relative;
   overflow: hidden;
@@ -640,14 +653,346 @@ footer a:hover {
 
 
 
+/* Popup Modal Styles */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* Center the modal */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Make the modal wider */
+  max-width: 800px; /* Increase max width */
+  border-radius: 8px; /* Optional: rounded corners */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+}
+
+/* Grey area for listing benefits */
+.popup-grey {
+  background-color: #eee;
+  width: 40%; /* Adjust width */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items */
+  justify-content: center; /* Center items vertically */
+  min-height: 400px; /* Increase min height as needed */
+}
+
+
+/* White area for login form */
+.popup-white {
+  background-color: #fff;
+  width: 60%; /* Adjust width */
+  padding: 20px;
+  text-align: center; /* Align text to the center */
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text */
+}
+
+.login-container h1,
+.login-container p {
+  margin: 10px 0; /* Space between elements */
+}
+
+.login-container input {
+  margin-bottom: 10px; /* Space below input */
+  padding: 10px; /* Padding for input */
+  width: calc(100% - 20px); /* Full width minus padding */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Border */
+}
+
+.login-container button {
+  padding: 10px 20px; /* Padding for button */
+  border-radius: 5px; /* Rounded corners */
+  border: none; /* Remove border */
+  background-color: #c4660f; /* Button background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Pointer on hover */
+  width: 100%; /* Full width of the button */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.login-container button:hover {
+  background-color: #FF8C00; /* Darker shade on hover */
+}
+
+/* Close button styles */
+.popup-content .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Icon styles */
+.popup-grey .icon {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Additional text styling */
+.popup-white h1 {
+  margin: 0 0 20px; /* Space below heading */
+}
+
+.popup-white p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Dynamic resizing of the center box */
+.center-box {
+  width: 80%; /* Box width adjusts with screen width */
+  max-width: 600px; /* Maximum width limit for larger screens */
+  min-width: 300px; /* Minimum width for smaller screens */
+  height: 70%; /* Box height adjusts with screen height */
+  max-height: 80vh; /* Maximum height limit */
+  min-height: 50vh; /* Minimum height */
+  background-image: url('prop1.jpeg'); /* Box background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures elements are spaced top-to-bottom */
+  align-items: center;
+  position: relative;
+}
+
+/* Logo positioning */
+/* Adjusted logo position and size */
+.logo {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px; /* Logo size remains the same */
+  height: auto;
+}
+
+/* Home icon and text inside the box */
+
+.home-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+/* Styling the home icon */
+.home-link i {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+/* Main header */
+.center-box h1 {
+  font-size: 2.5vw; /* Responsive font size relative to viewport width */
+  color: white;
+  margin: 50px 0 0 0;
+}
+
+/* Subtext */
+.center-box p {
+  font-size: 1.2vw; /* Responsive font size relative to viewport width */
+  color: white;
+  margin: 8px 0 15px 0;
+}
+
+
+/* Search box container */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 200px; /* 100px from top of the box */
+  margin-bottom: 15px;
+}
+
+
+/* Search box styling */
+.search-container input[type="text"] {
+  padding: 8px 15px;
+  width: 60%;
+  max-width: 300px; /* Adjusts to screen size */
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  font-size: 1vw; /* Responsive font size */
+  outline: none;
+}
+
+/* Search button */
+.search-container input[type="submit"] {
+  padding: 6px 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.8vw; /* Responsive font size */
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* Button hover effect */
+.search-container input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Image slider container */
+.image-slider {
+  width: 100%;
+  height: 100px; /* Reduced height */
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Slider wrapper */
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+/* Each image styling */
+.image-slider img {
+  width: 18%; /* Set the width to make images smaller */
+  margin-right: 10px; /* Add space between images */
+  border-radius: 5px; /* Optional: Add rounded corners to images */
+}
+
+/* Remove margin from the last image */
+.image-slider img:last-child {
+  margin-right: 0; /* No margin on the last image */
+}
+
+/* Icons container */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px; /* 100px from top of the box */
+  margin-bottom: 10px; /* Slight margin at the bottom */
+}
+
+.icon {
+  flex: 1;
+  text-align: center;
+  margin: 0 2px;
+}
+
+.icon i {
+  font-size: 16px; /* Reduced size of the icons */
+  color: white; /* Color of the icons */
+  margin-bottom: 2px; /* Reduced space below the icon */
+}
+
+.icon div {
+  font-size: 12px; /* Reduced size of the text below the icons */
+  color: white; /* Color of the text below the icons */
+}
+
+/* Media query for screens under 768px */
+@media (max-width: 768px) {
+  .center-box {
+      width: 90%;
+      max-width: 500px;
+      min-height: 60vh;
+  }
+
+  .center-box h1 {
+      font-size: 1.8em;
+  }
+
+  .center-box p {
+      font-size: 1em;
+  }
+
+  .search-container input[type="text"] {
+      width: 70%;
+  }
+
+  .icon-container i {
+      font-size: 1.2em;
+  }
+}
+
+/* Media query for screens under 480px */
+@media (max-width: 480px) {
+  .center-box {
+      padding: 10px;
+      min-height: 45vh;
+  }
+
+  .center-box h1 {
+      font-size: 1.4em;
+  }
+
+  .center-box p {
+      font-size: 0.9em;
+  }
+
+  .search-container input[type="text"] {
+      width: 65%;
+  }
+
+  .icon-container {
+      flex-direction: column;
+  }
+
+  .icon-container a {
+      margin-bottom: 10px;
+  }
+
+  .icon-container i {
+      font-size: 1.1em;
+  }
+}
+
   </style>
 </head>
+
+
 <body>
 
   <header>
     <img src="logo2.png" alt="Your Logo" style="height: 100px; left: 26px;">
     <nav>
-        <a href="#" id="loginLink">Login</a>
+        <!-- <a href="#" id="loginLink">Login</a> -->
         <a href="#">Signup</a>
         <div class="menu-container">
             <div class="menu-button" id="menuButton">
@@ -694,27 +1039,27 @@ footer a:hover {
 
         <!-- Icons below the search bar -->
         <div class="icon-container">
-            <div class="icon">
-                <i class="fas fa-door-open"></i>
-                <div>Rooms</div>
-            </div>
-            <div class="icon">
-                <i class="fas fa-users"></i>
-                <div>Friends</div>
-            </div>
-            <div class="icon">
-                <i class="fas fa-star"></i>
-                <div>Favorites</div>
-            </div>
-            <div class="icon">
-                <i class="fas fa-comments"></i>
-                <div>Chat</div>
-            </div>
-            <div class="icon">
-                <i class="fas fa-cog"></i>
-                <div>Settings</div>
-            </div>
-        </div>
+          <a href="rooms.html" class="icon">
+              <i class="fas fa-door-open"></i>
+              <div>Rooms</div>
+          </a>
+          <a href="second_webpage.html" class="icon">
+              <i class="fas fa-users"></i>
+              <div>Social Media</div>
+          </a>
+          <a href="Click and Earn.html" class="icon">
+              <i class="fas fa-star"></i>
+              <div>Click & Earn</div>
+          </a>
+          <a href="blog.html" class="icon">
+              <i class="fas fa-comments"></i>
+              <div>Blog</div>
+          </a>
+          <a href="settings.html" class="icon">
+              <i class="fas fa-cog"></i>
+              <div>Settings</div>
+          </a>
+      </div>
 
         <!-- Image Slider -->
         <div class="image-slider">
@@ -829,28 +1174,36 @@ footer a:hover {
 
 
   <!-- Popup Modal -->
-  <div id="loginPopup" class="popup">
-    <div class="popup-content">
+<div id="loginPopup" class="popup" role="dialog" aria-labelledby="loginTitle" aria-modal="true">
+  <div class="popup-content">
       <div class="popup-grey">
-        <i class="fas fa-home icon"></i>
-        <ul>
-          <li><i class="fas fa-check"></i> Zero brokerage</li>
-          <li><i class="fas fa-check"></i> Thousands of new listings daily</li>
-          <li><i class="fas fa-check"></i> 100 Cr+ brokerage saved</li>
-        </ul>
+          <div class="icon-container">
+              <i class="fas fa-home icon"></i>
+          </div>
+          <ul>
+              <li><i class="fas fa-check"></i> Zero brokerage</li>
+              <li><i class="fas fa-check"></i> Thousands of new listings daily</li>
+              <li><i class="fas fa-check"></i> 100 Cr+ brokerage saved</li>
+          </ul>
       </div>
       <div class="popup-white">
-        <span class="close-btn" id="closeBtn">&times;</span>
-        <h1>Log In</h1>
-        <p><strong>Enter e-mail to continue</strong></p>
-        <form id="loginForm">
-          <input type="email" id="email" name="email" placeholder="Enter email here..." required>
-          <button type="button" id="loginButton">Login</button>
-        </form>
-        <p>By continuing, you agree to our terms and conditions.</p>
+          <span class="close-btn" id="closeBtn" aria-label="Close popup">&times;</span>
+          <div class="login-container">
+            <h1 id="loginTitle">Log In</h1>
+            <p><strong>Enter e-mail to continue</strong></p>
+            <form id="loginForm" action="homepage.html" method="POST"> <!-- Add action to form if needed -->
+                <input type="email" id="email" name="email" placeholder="Enter email here..." required>
+                <button href="homepage.html" class="login-button">Login</button> <!-- Link to login.html -->
+            </form>
+            <p>By continuing, you agree to our terms and conditions.</p>
+        </div>
+        
       </div>
-    </div>
   </div>
+</div>
+
+
+
 
   <script>
     // Show the popup when login is clicked
@@ -975,6 +1328,33 @@ function autoSlide() {
 // Start the automatic sliding every 5 seconds
 setInterval(autoSlide, 5000);
 
+
+  // Get the modal
+  var modal = document.getElementById("loginPopup");
+
+  // Get the login icon that opens the modal
+  var loginIcon = document.getElementById("loginIcon");
+
+  // Get the <span> element that closes the modal
+  var closeBtn = document.getElementById("closeBtn");
+
+  // When the user clicks on the login icon, open the modal
+  loginIcon.onclick = function(event) {
+      event.preventDefault(); // Prevent default anchor behavior
+      modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  closeBtn.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
 
 
   </script>
