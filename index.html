@@ -1002,6 +1002,30 @@ footer a:hover {
   z-index: 999; /* Ensure it stays below the moving GIF */
 }
 
+.box {
+  background-color: #f4f4f4; /* Light gray background */
+  padding: 10px; /* Add some padding */
+  border-radius: 5px; /* Rounded corners */
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Vertically center items */
+}
+
+.home-link {
+  text-decoration: none; /* Remove underline from link */
+  color: #333; /* Dark gray color for the text */
+  font-size: 18px; /* Font size for the text */
+  margin-left: 8px; /* Space between icon and text */
+  display: flex; /* Allow flex alignment for the link */
+  align-items: center; /* Center icon and text vertically */
+}
+
+.home-icon {
+  width: 20px; /* Adjust width of the icon */
+  height: 20px; /* Adjust height of the icon */
+  margin-right: 8px; /* Space between icon and text */
+}
+
+
 
 
 
@@ -1048,10 +1072,13 @@ footer a:hover {
     <!-- Logo in the top right corner -->
         <img src="logo2.png" alt="Logo" class="logo"> <!-- Replace with your logo image -->
 
-        <!-- Home Icon and Text inside the Box -->
-        <a href="#" class="home-link">
-            <i class="fas fa-home"></i> Home
-        </a>
+        <div class="box">
+          <!-- Custom Home Icon and Text inside the Box -->
+          <a href="#" class="home-link">
+              <img src="Background_Images/Gifs-Box/custom-home-icon.gif" alt="Home Icon" class="home-icon"> Home
+          </a>
+      </div>
+      
 
         <h1>Find Your Room</h1>
         <p>Find your room today</p>
