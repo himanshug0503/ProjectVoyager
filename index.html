@@ -983,6 +983,26 @@ footer a:hover {
   }
 }
 
+/* Updated styles for the daytime (sun) and nighttime (moon) GIFs */
+.daytime-gif {
+  position: absolute;
+  top: 120px; /* Keep at 120px from the top */
+  left: 10px; /* Positioned at 10px from the left */
+  width: 100px; /* Keep the width the same */
+  height: auto; /* Maintain the aspect ratio */
+  z-index: 999; /* Ensure it stays below the moving GIF */
+}
+
+.nighttime-gif {
+  position: absolute;
+  top: 120px; /* Keep at 120px from the top */
+  right: 10px; /* Positioned at 10px from the right */
+  width: 100px; /* Keep the width the same */
+  height: auto; /* Maintain the aspect ratio */
+  z-index: 999; /* Ensure it stays below the moving GIF */
+}
+
+
 
 
   </style>
@@ -1015,6 +1035,10 @@ footer a:hover {
         </div>
     </nav>
 </header>
+
+<!-- Daytime and Nighttime GIFs -->
+<img src="Sun.gif" alt="Daytime GIF" class="daytime-gif" id="daytimeGif">
+<img src="Moon.gif" alt="Nighttime GIF" class="nighttime-gif" id="nighttimeGif">
 
 
   <!-- Page Container -->
@@ -1358,6 +1382,24 @@ setInterval(autoSlide, 5000);
           modal.style.display = "none";
       }
   }
+  
+  // Function to show the appropriate GIF based on the time of day
+function showAppropriateGif() {
+  const now = new Date();
+  const hours = now.getHours();
+
+  // Show daytime GIF from 6 AM to 6 PM, otherwise show nighttime GIF
+  if (hours >= 6 && hours < 18) {
+      document.getElementById("daytimeGif").style.display = "block";
+      document.getElementById("nighttimeGif").style.display = "none";
+  } else {
+      document.getElementById("daytimeGif").style.display = "none";
+      document.getElementById("nighttimeGif").style.display = "block";
+  }
+}
+
+// Call the function to show the appropriate GIF
+showAppropriateGif();
 
 
   </script>
