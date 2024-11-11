@@ -4,22 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voyager - Making Dream Work</title>
+  <link rel="icon" href="logo2.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
   <style>
     body {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      background-image: url('image34.JPG');
-      background-size: cover;
-      background-position: center;
-      overflow: hidden;
       font-family: Arial, sans-serif;
+    }
+
+    /* Page Container */
+    .page-container {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      min-height: 100vh;
     }
 
+    /* Header */
     header {
       background-color: rgb(255, 255, 255);
       color: white;
@@ -53,15 +56,20 @@
       background-color: #777;
     }
 
-    .center-content {
-      text-align: center;
-      flex-grow: 1;
+    /* First Page */
+    .page-1 {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('image34.jpg'); /* Replace with your page background image */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh; /* Full viewport height */
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
-      z-index: 998;
-    }
+  }
 
     .form-container {
       background: #fff;
@@ -71,7 +79,6 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      position: relative;
     }
 
     select, input[type="text"] {
@@ -81,169 +88,228 @@
     }
 
     select {
-      background: #fff;
       flex: 1;
     }
 
     input[type="text"] {
-      background: #fafafa;
       flex: 2;
     }
 
     .search-button {
       background-color: #0866ff;
       color: white;
-      border: none;
+      padding: 10px 20px;
       border-radius: 4px;
-      padding: 10px 20px;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
     }
 
-    .search-button i {
-      margin-right: 8px; /* Adds space between icon and text */
-    }
-
-    .search-button:hover {
-      background-color: #0659c1;
-    }
-
-    .forget-password {
-      display: block;
-      margin-bottom: 10px;
-      text-decoration: none;
-      color: #0866ff;
-      font-size: 14px;
-    }
-
-    .forget-password:hover {
-      text-decoration: underline;
-    }
-
-    .bug-button {
-      background-color: orange;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      text-align: center;
-      margin-top: 10px;
-      display: inline-block;
-    }
-
-    .bug-button:hover {
-      background-color: darkorange;
-    }
-
-    .bug-button a {
-      text-decoration: none;
-      color: #fff;
-    }
-
-    .toggle-container {
-      position: fixed;
-      top: 150px;
-      right: 20px;
-      z-index: 999;
-    }
-
-    .toggle-container label {
-      font-size: 16px;
-      font-weight: bold;
-      color: #fff;
-    }
-
-    .toggle-switch {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 34px;
-    }
-
-    .toggle-switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .toggle-slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      transition: .4s;
-      border-radius: 34px;
-    }
-
-    .toggle-slider:before {
-      position: absolute;
-      content: "";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      transition: .4s;
-      border-radius: 50%;
-    }
-
-    input:checked + .toggle-slider {
-      background-color: #2196F3;
-    }
-
-    input:checked + .toggle-slider:before {
-      transform: translateX(26px);
-    }
-
-    .toggle-btn {
-      cursor: pointer;
-      padding: 5px 10px;
-      background-color: #ccc;
-      border: none;
-      border-radius: 5px;
-      margin-top: 10px;
-      display: block;
-    }
-
-    .popup {
-      display: none;
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 1200;
-    }
-
-    .popup-content {
-      margin-bottom: 15px;
-      display: flex;
-      width: 60%;
-      width: 700px;
-      height: 400px;
-      border-radius: 5px;
-      position: relative;
-    }
-
-    .popup-grey {
-      background-color: #eee;
-      width: 33.33%;
+    /* Second Page */
+    .page-2 {
+      background-image: url('Background_Images/image35.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh; /* Ensures the background covers the entire viewport */
       padding: 20px;
-      box-sizing: border-box;
+      color: white; /* Adjust text color if needed */
+    }
+
+    /* Third Page */
+    .page-3 {
+      background-color: #dcd7f1;
+      padding: 50px 20px;
+      text-align: center;
+  }
+  
+  .circle-container {
       display: flex;
-      flex-direction: column;
+      justify-content: space-around;
+      margin: 40px 0;
+  }
+  
+  .circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 2px solid red;
+      display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
+      text-align: center;
+      font-size: 28px;
+  }
+  
+  
+  .texts-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns text to the left */
+    margin: 20px 0; /* Space above the text */
+    gap: 240px; /* Optional: Adjusts the spacing between texts */
+}
+  
+.circle-text {
+  font-weight: bold;
+  font-size: 16px; /* Adjust the font size as needed */
+  margin-left: 145px; /* Move text slightly to the left */
+  margin-left: 200px; /* Adjust the negative margin as needed */
+  }
+  
+  .final-text {
+      margin-top: 35px; /* Space between the separate texts and the final statement */
+      font-weight: normal; /* Adjust the font weight as needed */
+      font-size: 22px; /* Adjust the font size as needed */
+      font-weight: bold; /* Makes the text bold */
+      
+  }
+
+    /* Fourth Page */
+    .page-4 {
+      background-color: #334a5c;
+      padding: 50px 20px;
+      color: white;
+      text-align: center;
     }
+
+    .customer-image {
+      width: 14cm;
+      height: 7cm;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center; /* Center the testimonials */
+      overflow: hidden; /* Hides overflow to show only three tiles */
+  }
+  
+  .testimonial-container {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap; /* Prevent wrapping for sliding effect */
+  }
+  
+  .testimonial-tiles {
+      display: flex;
+      transition: transform 0.5s ease; /* Smooth transition */
+      width: fit-content; /* Adjust width automatically based on content */
+  }
+  
+  .testimonial-tile {
+      background: #fff;
+      color: #333;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px; /* Fixed width */
+      flex: 0 0 auto; /* Prevent flex items from shrinking */
+      margin: 0 10px; /* Space between tiles */
+  }
+  
+  .testimonial-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+  }
+  
+  .testimonial-tile h3 {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #334a5c;
+  }
+  
+  .testimonial-tile p {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+      .testimonial-tile {
+          width: 90%; /* Make tiles full width on smaller screens */
+          margin: 10px 0; /* Add margin for spacing */
+      }
+  
+      .testimonial-container {
+          flex-direction: column; /* Stack testimonials vertically */
+          align-items: center; /* Center align items */
+      }
+  }
+  
+  .arrow {
+      position: absolute; /* Positioned relative to testimonials */
+      right: 10px; /* Adjust as needed */
+      cursor: pointer;
+      font-size: 2em;
+      color: #333;
+      user-select: none; /* Prevent text selection */
+  }
+  
+    /* Footer */
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      padding: 15px 20px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Popup Modal */
+    .popup {
+      display: none; /* Hide by default */
+      position: fixed; /* Stay in place */
+      z-index: 1000; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+  }
+  
+  .popup-content {
+    background-color: #fff; /* White background */
+    margin: auto; /* Center the modal */
+    padding: 20px; /* Padding around content */
+    border: 1px solid #888; /* Optional border */
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Set max width for large screens */
+    border-radius: 8px; /* Rounded corners */
+}
+
+  .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-grey {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+}
+
     .popup-grey .icon {
       font-size: 36px;
       color: #333;
@@ -267,15 +333,10 @@
     }
 
     .popup-white {
-      text-align: center;
-      background-color: #fff;
-      width: 66.67%;
-      padding: 20px;
-      box-sizing: border-box;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+      flex-direction: column; /* Arrange children vertically */
+      align-items: center; /* Center items horizontally */
+  }
 
     .popup-content .close-btn {
       position: absolute;
@@ -285,10 +346,13 @@
       font-size: 20px;
     }
 
+    .popup-white h1 {
+      margin: 0 0 20px;
+    }
+
     .popup-white p {
       font-size: 14px;
       color: #666;
-      text-align: center;
       margin-top: 20px;
       font-weight: bold;
     }
@@ -297,14 +361,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-width: 80%;
-      margin: 0 auto;
     }
 
     .popup-content input {
-      width: 150%;
+      width: 80%;
       padding: 12px;
-      font-size: 16px;
       margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 5px;
@@ -320,208 +381,1107 @@
       width: 80%;
       text-align: center;
     }
-    .popup-content button:hover {
-      background-color: darkorange;
-    }
+    .welcome-text {
+      position: absolute;
+      top: 350px; /* Adjust as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2em; /* Adjust the font size as needed */
+      color: white; /* Choose a color that stands out on your background */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: add shadow for better readability */
+      z-index: 10; /* Ensure it's on top of other content */
+  }
+  
+  /* Ensure the form-container has a z-index lower than the welcome text if needed */
+    .form-container {
+      position: absolute;
+      top: 400px; /* Adjust as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5; /* Ensure this is lower than welcome text */
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* Optional: background with transparency */
+      border-radius: 10px; /* Optional: rounded corners */
+  }
+  
 
-    .sample-text {
-      font-size: 14px;
-      color: #666;
-      text-align: center;
-      margin-top: 20px;
-    }
 
-    footer {
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
-      text-align: center;
-      padding: 15px 20px;
-    }
-
-    footer p {
-      margin: 0;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: #09f;
+    .social-icons {
+      text-align: center; /* Center the icons */
+      padding: 20px;
+      background-color: #334a5c; /* Example background color */
+  }
+  
+  .social-icons a {
+      margin: 0 10px;
       text-decoration: none;
-    }
+      color: white; /* Icon color */
+      font-size: 24px;
+  }
+  
+  .social-icons a:hover {
+      color: #FFD700; /* Change color on hover */
+  }
+  
+  /* Navigation and Menu Styles */
+nav {
+  display: flex;
+  gap: 15px;
+  position: relative; /* Needed for absolute positioning of the dropdown */
+}
 
-    footer a:hover {
-      text-decoration: underline;
-    }
+.menu-container {
+  position: relative;
+}
+.menu-text {
+  font-size: 16px; /* Adjust font size as needed */
+}
+
+.menu-button {
+  display: flex;
+  align-items: center;
+  background-color: #555; /* Adjust color as needed */
+  color: white; /* Adjust color as needed */
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.line {
+  width: 20px; /* Adjust width as needed */
+  height: 2px; /* Adjust height as needed */
+  background-color: white; /* Adjust color as needed */
+  margin: 3px 0;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  <!-- background-color: #fff; /* Adjust background color as needed */ -->
+  color: #333; /* Adjust text color as needed */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0; /* Adjust hover color as needed */
+}
+
+.popup-content button:hover {
+  background-color: darkorange;
+}
+footer a {
+  color: lightblue;
+  text-decoration: none; /* Optional: Removes underline */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Optional: Adds underline on hover */
+}
+
+
+.center-box {
+  width: 600px;
+  height: 800px;
+  background-image: url('Prop1.jpg'); /* Replace with your box background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+/* Logo positioning */
+.logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px; /* Adjust the width of the logo */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Home icon and text inside the box */
+.home-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* Styling the icon */
+.home-link i {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+/* Main header positioned below the home link */
+.center-box h1 {
+  font-size: 32px;
+  color: white; /* Adjust text color for contrast */
+  margin: 60px 0 0 0;
+}
+
+/* Subtext under the header */
+.center-box p {
+  font-size: 18px;
+  color: white; /* Adjust text color for contrast */
+  margin: 10px 0 20px 0;
+}
+
+/* Flex container for the search bar and button */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin-top: 200px; /* Reduced from 250px to move it slightly up */
+  margin-bottom: 15px;
+}
+
+/* Make the search box circular and reduce its width */
+.search-container input[type="text"] {
+  padding: 10px 20px;
+  width: 60%; /* Adjust width as needed */
+  max-width: 250px; /* Limit maximum width */
+  border: 1px solid #ccc;
+  border-radius: 50px; /* Circular shape */
+  font-size: 16px;
+  outline: none;
+}
+
+/* Style the button next to the search box */
+.search-container input[type="submit"] {
+  padding: 8px 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px; /* Small gap between input and button */
+  flex-shrink: 0; /* Ensure the button doesn't shrink */
+}
+
+/* Button hover effect */
+.search-container input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Image slider container */
+.image-slider {
+  width: 90%;
+  height: 140px;
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Slider wrapper to allow sliding */
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+/* Each image styling */
+.image-slider img {
+  width: 18%; /* Set the width to make images smaller */
+  margin-right: 10px; /* Add space between images */
+  border-radius: 5px; /* Optional: Add rounded corners to images */
+}
+
+/* Remove margin from the last image */
+.image-slider img:last-child {
+  margin-right: 0; /* No margin on the last image */
+}
+
+/* Icons container */
+.icon-container {
+  display: flex;
+  justify-content: center; /* Center the icons */
+  width: 100%;
+  margin-top: -25px; /* Adjusted to move closer to the search box */
+}
+
+.icon {
+  flex: 1;
+  text-align: center;
+  margin: 0 3px; /* Reduced spacing between icons */
+}
+
+.icon i {
+  font-size: 16px; /* Reduced size of the icons */
+  color: white; /* Color of the icons */
+  margin-bottom: 2px; /* Reduced space below the icon */
+}
+
+.icon div {
+  font-size: 12px; /* Reduced size of the text below the icons */
+  color: white; /* Color of the text below the icons */
+}
+
+
+
+/* Popup Modal Styles */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* Center the modal */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Make the modal wider */
+  max-width: 800px; /* Increase max width */
+  border-radius: 8px; /* Optional: rounded corners */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+}
+
+/* Grey area for listing benefits */
+.popup-grey {
+  background-color: #eee;
+  width: 40%; /* Adjust width */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items */
+  justify-content: center; /* Center items vertically */
+  min-height: 400px; /* Increase min height as needed */
+}
+
+
+/* White area for login form */
+.popup-white {
+  background-color: #fff;
+  width: 60%; /* Adjust width */
+  padding: 20px;
+  text-align: center; /* Align text to the center */
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text */
+}
+
+.login-container h1,
+.login-container p {
+  margin: 10px 0; /* Space between elements */
+}
+
+.login-container input {
+  margin-bottom: 10px; /* Space below input */
+  padding: 10px; /* Padding for input */
+  width: calc(100% - 20px); /* Full width minus padding */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Border */
+}
+
+.login-container button {
+  padding: 10px 20px; /* Padding for button */
+  border-radius: 5px; /* Rounded corners */
+  border: none; /* Remove border */
+  background-color: #c4660f; /* Button background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Pointer on hover */
+  width: 100%; /* Full width of the button */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.login-container button:hover {
+  background-color: #FF8C00; /* Darker shade on hover */
+}
+
+/* Close button styles */
+.popup-content .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Icon styles */
+.popup-grey .icon {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Additional text styling */
+.popup-white h1 {
+  margin: 0 0 20px; /* Space below heading */
+}
+
+.popup-white p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Dynamic resizing of the center box */
+.center-box {
+  width: 80%; /* Box width adjusts with screen width */
+  max-width: 600px; /* Maximum width limit for larger screens */
+  min-width: 300px; /* Minimum width for smaller screens */
+  height: 70%; /* Box height adjusts with screen height */
+  max-height: 80vh; /* Maximum height limit */
+  min-height: 50vh; /* Minimum height */
+  background-image: url('Prop1.jpg'); /* Box background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures elements are spaced top-to-bottom */
+  align-items: center;
+  position: relative;
+}
+
+/* Logo positioning */
+/* Adjusted logo position and size */
+.logo {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px; /* Logo size remains the same */
+  height: auto;
+}
+
+/* Home icon and text inside the box */
+
+.home-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+/* Styling the home icon */
+.home-link i {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+/* Main header */
+.center-box h1 {
+  font-size: 2.5vw; /* Responsive font size relative to viewport width */
+  color: white;
+  margin: 50px 0 0 0;
+}
+
+/* Subtext */
+.center-box p {
+  font-size: 1.2vw; /* Responsive font size relative to viewport width */
+  color: white;
+  margin: 8px 0 15px 0;
+}
+
+
+/* Search box container */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 200px; /* 100px from top of the box */
+  margin-bottom: 15px;
+}
+
+
+/* Search box styling */
+.search-container input[type="text"] {
+  padding: 8px 15px;
+  width: 60%;
+  max-width: 300px; /* Adjusts to screen size */
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  font-size: 1vw; /* Responsive font size */
+  outline: none;
+}
+
+/* Search button */
+.search-container input[type="submit"] {
+  padding: 6px 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.8vw; /* Responsive font size */
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* Button hover effect */
+.search-container input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Image slider container */
+.image-slider {
+  width: 100%;
+  height: 90px; /* Reduced height */
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Slider wrapper */
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+/* Each image styling */
+.image-slider img {
+  width: 18%; /* Set the width to make images smaller */
+  margin-right: 10px; /* Add space between images */
+  border-radius: 5px; /* Optional: Add rounded corners to images */
+}
+
+/* Remove margin from the last image */
+.image-slider img:last-child {
+  margin-right: 0; /* No margin on the last image */
+}
+
+/* Icons container */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px; /* 100px from top of the box */
+  margin-bottom: 10px; /* Slight margin at the bottom */
+}
+
+.icon {
+  flex: 1;
+  text-align: center;
+  margin: 0 2px;
+}
+
+.icon i {
+  font-size: 16px; /* Reduced size of the icons */
+  color: white; /* Color of the icons */
+  margin-bottom: 2px; /* Reduced space below the icon */
+}
+
+.icon div {
+  font-size: 12px; /* Reduced size of the text below the icons */
+  color: white; /* Color of the text below the icons */
+}
+
+/* Media query for screens under 768px */
+@media (max-width: 768px) {
+  .center-box {
+      width: 90%;
+      max-width: 500px;
+      min-height: 60vh;
+  }
+
+  .center-box h1 {
+      font-size: 1.8em;
+  }
+
+  .center-box p {
+      font-size: 1em;
+  }
+
+  .search-container input[type="text"] {
+      width: 70%;
+  }
+
+  .icon-container i {
+      font-size: 1.2em;
+  }
+}
+
+/* Media query for screens under 480px */
+@media (max-width: 480px) {
+  .center-box {
+      padding: 10px;
+      min-height: 45vh;
+  }
+
+  .center-box h1 {
+      font-size: 1.4em;
+  }
+
+  .center-box p {
+      font-size: 0.9em;
+  }
+
+  .search-container input[type="text"] {
+      width: 65%;
+  }
+
+  .icon-container {
+      flex-direction: column;
+  }
+
+  .icon-container a {
+      margin-bottom: 10px;
+  }
+
+  .icon-container i {
+      font-size: 1.1em;
+  }
+}
+
+/* Updated styles for the daytime (sun) and nighttime (moon) GIFs */
+.daytime-gif {
+  position: absolute;
+  top: 120px; /* Keep at 120px from the top */
+  left: 10px; /* Positioned at 10px from the left */
+  width: 100px; /* Keep the width the same */
+  height: auto; /* Maintain the aspect ratio */
+  z-index: 999; /* Ensure it stays below the moving GIF */
+}
+
+.nighttime-gif {
+  position: absolute;
+  top: 120px; /* Keep at 120px from the top */
+  right: 10px; /* Positioned at 10px from the right */
+  width: 100px; /* Keep the width the same */
+  height: auto; /* Maintain the aspect ratio */
+  z-index: 999; /* Ensure it stays below the moving GIF */
+}
+
+.box {
+  background-color: #f4f4f4; /* Light gray background */
+  padding: 10px; /* Add some padding */
+  border-radius: 5px; /* Rounded corners */
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Vertically center items */
+}
+
+.home-link {
+  text-decoration: none; /* Remove underline from link */
+  color: #333; /* Dark gray color for the text */
+  font-size: 18px; /* Font size for the text */
+  margin-left: 8px; /* Space between icon and text */
+  display: flex; /* Allow flex alignment for the link */
+  align-items: center; /* Center icon and text vertically */
+}
+
+.home-icon {
+  width: 20px; /* Adjust width of the icon */
+  height: 20px; /* Adjust height of the icon */
+  margin-right: 8px; /* Space between icon and text */
+}
+
+
+
+
 
   </style>
 </head>
+
+
 <body>
 
   <header>
-    <img src="logo2.png" alt="Your Logo" style="height: 100px; position: relative; top: 0px; left: 26px;">
+    <img src="logo2.png" alt="Your Logo" style="height: 100px; left: 26px;">
     <nav>
-      <a href="#" id="loginLink">Login</a>
-      <a href="#">Signup</a>
+        <!-- <a href="#" id="loginLink">Login</a> -->
+        
+        <div class="menu-container">
+            <div class="menu-button" id="menuButton">
+                <div class="menu-icon">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <span class="menu-text">Menu</span>
+            </div>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#">Post Your Property</a>
+                <a href="#">Rental Agreement</a>
+                <a href="#">Packer & Movers</a>
+                <a href="#">Refer a friend</a>
+                <a href="#">Blog</a>
+            </div>
+        </div>
     </nav>
-  </header>
+</header>
 
-  <div class="center-content">
-    <div class="form-container">
-      <select>
-        <option value="" disabled selected>Select an option</option>
-        <option value="1">Bangalore</option>
-        <option value="2">Delhi</option>
-        <option value="3">Chandigarh</option>
-      </select>
-      <input type="text" placeholder="Enter text here">
-      <button class="search-button"><i class="fas fa-search"></i> Search</button>
-    </div>
-  </div>
+<!-- Daytime and Nighttime GIFs -->
+<img src="Sun.gif" alt="Daytime GIF" class="daytime-gif" id="daytimeGif">
+<img src="Moon.gif" alt="Nighttime GIF" class="nighttime-gif" id="nighttimeGif">
 
-  <div id="loginPopup" class="popup">
-    <div class="popup-content">
-      <div class="popup-grey">
-        <i class="fas fa-home icon"></i>
-        <ul>
-          <li><i class="fas fa-check"></i> Zero brokerage</li>
-          <li><i class="fas fa-check"></i> Thousands of new listings daily</li>
-          <li><i class="fas fa-check"></i> 100 Cr+ brokerage saved</li>
-        </ul>
+
+  <!-- Page Container -->
+  <div class="page-1">
+    <div class="center-box">
+    <!-- Page 1 (First Page) -->
+    <!-- Logo in the top right corner -->
+        <img src="logo2.png" alt="Logo" class="logo"> <!-- Replace with your logo image -->
+
+        <div class="box">
+          <!-- Custom Home Icon and Text inside the Box -->
+          <a href="#" class="home-link">
+              <img src="Background_Images/Gifs-Box/custom-home-icon.gif" alt="Home Icon" class="home-icon"> Home
+          </a>
       </div>
-      <div class="popup-white">
-        <span class="close-btn" id="closeBtn">&times;</span>
-        <h1>Log In</h1>
-        <p><strong>Enter e-mail to continue</strong></p>
-        <form id="loginForm">
-          <input type="email" id="email" name="email" placeholder="Enter email here..." required>
-          <button type="button" id="loginButton">Login</button>
+      
+
+        <h1>Find Your Room</h1>
+        <p>Find your room today</p>
+        
+        <!-- Search Bar -->
+        <form action="Filters.html" method="GET" class="search-container">
+            <input type="text" placeholder="Type to search..." name="search">
+            <input type="submit" value="Search">
         </form>
-        <p class="sample-text">By continuing, you agree to our terms and conditions.</p>
+
+
+        <!-- Icons below the search bar -->
+        <div class="icon-container">
+          <a href="rooms.html" class="icon">
+              <i class="fas fa-door-open"></i>
+              <div>Rooms</div>
+          </a>
+          <a href="friends.html" class="icon">
+              <i class="fas fa-users"></i>
+              <div>Friends</div>
+          </a>
+          <a href="favorites.html" class="icon">
+              <i class="fas fa-star"></i>
+              <div>Favorites</div>
+          </a>
+          <a href="#" class="icon" id="loginIcon">
+            <i class="fas fa-user-plus"></i> <!-- Icon for Log in -->
+            <div>Log in</div>
+        </a>
+        <!-- Sign Up Button -->
+          <a href="#" class="icon" id="signUpBtn">
+            <i class="fas fa-user-plus"></i> <!-- Icon for Sign Up -->
+            <div>Sign Up</div>
+          </a>
+
       </div>
+
+        <!-- Image Slider -->
+        <div class="image-slider">
+            <div class="slider-wrapper" id="slider">
+                <img src="Background_Images/Login-Homepage_scroll_Images/image1.jpg" alt="Image 1">
+                <img src="Background_Images/Login-Homepage_scroll_Images/image2.jpg" alt="Image 2">
+                <img src="Background_Images/Login-Homepage_scroll_Images/image3.jpg" alt="Image 3">
+                <img src="Background_Images/Login-Homepage_scroll_Images/image4.jpg" alt="Image 4">
+                <img src="Background_Images/Login-Homepage_scroll_Images/image5.jpeg" alt="Image 5">
+                <img src="Background_Images/Login-Homepage_scroll_Images/image6.jpg" alt="Image 6">
+                <img src="Background_Images/Login-Homepage_scroll_Images/image7.jpg" alt="Image 7">
+                <img src="Background_Images/Login-Homepage_scroll_Images/image8.jpeg" alt="Image 8">
+                <img src="Background_Images/Login-Homepage_scroll_Images/image9.jpeg" alt="Image 9">
+                <img src="Background_Images/Login-Homepage_scroll_Images/image10.jpeg" alt="Image 10">
+                
+                <!-- Add more images -->
+            </div>
+        </div>
     </div>
   </div>
+</body>  
 
-  <div class="toggle-container">
-    <button class="toggle-btn" onclick="toggleFont()" id="fontToggleButton">Toggle Font</button>
+
+    <!-- Page 2 (Second Page) -->
+    <div class="page-2">
+      <h1>Welcome to Page 2</h1>
+      <p>This is the content of the second page. Scroll down for more.</p>
+    </div>
+
+    <!-- Page 3 (We Make A Difference) -->
+    <div class="page-3">
+      <h1>We Make A Difference</h1>
+      <div class="circle-container">
+          <div class="circle">
+              <span>₹130 Cr+ </span>
+          </div>
+          <div class="circle">
+              <span>30 Lakhs+</span>
+          </div>
+          <div class="circle">
+              <span>2 Lakh+</span>
+          </div>
+      </div>
+      <div class="texts-container">
+          <div class="circle-text">Brokerage Saved every year</div> <!-- Text for Impact -->
+          <div class="circle-text">Satisfied customers</div> <!-- Text for Quality -->
+          <div class="circle-text">New Listings per month</div> <!-- Text for Value -->
+      </div>
+      <div class="final-text">Our dedication to delivering high-quality services makes a real impact.</div>
   </div>
+  
+  
+  
 
+    <!-- Page 4 (Our Customers Love Us) -->
+    <div class="page-4">
+      <h1>Our Customers Love Us</h1>
+      <img src="Background_Images/your-image.jpg" alt="Customer Image" class="customer-image">
+    
+      <!-- Testimonials -->
+      <div class="testimonials">
+        <div class="testimonial-container">
+          <div class="testimonial-tiles">
+            <div class="testimonial-tile">
+              <img src="Background_Images/John_Doe.jpg" alt="John Doe" class="testimonial-image">
+              <h3>John Doe</h3>
+              <p>"This service is amazing! It exceeded all my expectations and I couldn't be happier with the results."</p>
+            </div>
+            <div class="testimonial-tile">
+              <img src="Background_Images/Jane_Smith.jpg" alt="Jane Smith" class="testimonial-image">
+              <h3>Jane Smith</h3>
+              <p>"A fantastic experience from start to finish. The team was professional and attentive. Highly recommended!"</p>
+            </div>
+            <div class="testimonial-tile">
+              <img src="Background_Images/Emily.jpg" alt="Emily Johnson" class="testimonial-image">
+              <h3>Emily Johnson</h3>
+              <p>"Excellent service! The support and quality provided were top-notch. I would definitely use this again."</p>
+            </div>
+            <div class="testimonial-tile">
+              <img src="Background_Images/michael_Brown.jpg" alt="Michael Brown" class="testimonial-image">
+              <h3>Michael Brown</h3>
+              <p>"Great service overall! I was impressed with the results and the level of attention to detail."</p>
+            </div>
+            <div class="testimonial-tile">
+              <img src="Background_Images/Alice_Green.jpg" alt="Alice Green" class="testimonial-image">
+              <h3>Alice Green</h3>
+              <p>"The experience was fantastic! I appreciate the effort the team put into making everything perfect."</p>
+            </div>
+            <div class="testimonial-tile">
+              <img src="Background_Images/Bob_White.jpg" alt="Bob White" class="testimonial-image">
+              <h3>Bob White</h3>
+              <p>"I had a great time using this service. Highly efficient and very reliable!"</p>
+            </div>
+          </div>
+          <!-- Removed the arrow from here -->
+        </div>
+      </div>
+    </div>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Voyager. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    <p>&copy; 2024 Voyager. All rights reserved. | <a href="PrivacyPolicy.html">Privacy Policy</a> | <a href="Terms&Conditions.html">Terms of Service</a></p>
   </footer>
 
+  <footer>
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.reddit.com" target="_blank"><i class="fab fa-reddit"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+</footer>
+
+
+ <!-- Popup Modal for Login-->
+<div id="loginPopup" class="popup" role="dialog" aria-labelledby="loginTitle" aria-modal="true">
+  <div class="popup-content">
+      <div class="popup-grey">
+          <div class="icon-container">
+              <i class="fas fa-home icon"></i>
+          </div>
+          <ul>
+              <li><i class="fas fa-check"></i> Zero brokerage</li>
+              <li><i class="fas fa-check"></i> Thousands of new listings daily</li>
+              <li><i class="fas fa-check"></i> 100 Cr+ brokerage saved</li>
+          </ul>
+      </div>
+      <div class="popup-white">
+          <span class="close-btn" id="closeBtn" aria-label="Close popup">&times;</span>
+          <div class="login-container">
+            <h1 id="loginTitle">Log In</h1>
+            <p><strong>Enter e-mail to continue</strong></p>
+            <form id="loginForm" action="homepage.html" method="GET">
+              <input type="email" id="email" name="email" placeholder="Enter email here..." required>
+              <button type="submit" class="login-button">Login</button>
+          </form>
+          
+            <p>By continuing, you agree to our <a href="terms.html" target="_blank">terms and conditions</a>.</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Popup Modal for SignUp -->
+<div id="SignupPopup" class="popup" role="dialog" aria-labelledby="loginTitle" aria-modal="true" style="display: none;">
+  <div class="popup-content">
+      <div class="popup-grey">
+        <div class="icon-container">
+          <i class="fas fa-home icon"></i>
+      </div>
+          <ul>
+              <li><i class="fas fa-check"></i> Zero brokerage</li>
+              <li><i class="fas fa-check"></i> Thousands of new listings daily</li>
+              <li><i class="fas fa-check"></i> 100 Cr+ brokerage saved</li>
+          </ul>
+      </div>
+      <div class="popup-white">
+          <div class="login-container">
+              <h1 id="loginTitle">Sign Up</h1>
+              <p><strong>Enter e-mail to continue</strong></p>
+              <form id="loginForm" action="homepage.html" method="GET">
+                  <label for="email" class="sr-only">Email</label>
+                  <input type="email" id="email" name="email" placeholder="Enter email here..." required>
+                  <button type="submit" class="login-button">Login</button>
+              </form>
+                <p>By continuing, you agree to our <a href="terms.html" target="_blank">terms and conditions</a>.</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
   <script>
-    function toggleFont() {
-      var currentFont = localStorage.getItem("selectedFont");
-    
-      if (currentFont === "Arial, sans-serif") {
-        document.body.style.fontFamily = "Times New Roman, serif";
-        document.querySelectorAll('input[type="text"], select').forEach(input => {
-          input.style.fontFamily = "Times New Roman, serif";
-        });
-        localStorage.setItem("selectedFont", "Times New Roman, serif");
-      } else if (currentFont === "Times New Roman, serif") {
-        document.body.style.fontFamily = "Helvetica, sans-serif";
-        document.querySelectorAll('input[type="text"], select').forEach(input => {
-          input.style.fontFamily = "Helvetica, sans-serif";
-        });
-        localStorage.setItem("selectedFont", "Helvetica, sans-serif");
-      } else if (currentFont === "Helvetica, sans-serif") {
-        document.body.style.fontFamily = "Chiller, cursive";
-        document.querySelectorAll('input[type="text"], select').forEach(input => {
-          input.style.fontFamily = "Chiller, cursive";
-        });
-        localStorage.setItem("selectedFont", "Chiller, cursive");
-      } else {
-        document.body.style.fontFamily = "Arial, sans-serif";
-        document.querySelectorAll('input[type="text"], select').forEach(input => {
-          input.style.fontFamily = "Arial, sans-serif";
-        });
-        localStorage.setItem("selectedFont", "Arial, sans-serif");
-      }
-    
-      updateButtonText();
-    }
-    
-    function updateButtonText() {
-      var currentFont = localStorage.getItem("selectedFont");
-      var button = document.getElementById("fontToggleButton");
-    
-      switch(currentFont) {
-        case "Arial, sans-serif":
-          button.innerText = "Arial";
-          break;
-        case "Times New Roman, serif":
-          button.innerText = "Times New Roman";
-          break;
-        case "Helvetica, sans-serif":
-          button.innerText = "Helvetica";
-          break;
-        case "Chiller, cursive":
-          button.innerText = "Chiller";
-          break;
-        default:
-          button.innerText = "Toggle Font";
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-      var selectedFont = localStorage.getItem("selectedFont");
-      if (selectedFont) {
-        document.body.style.fontFamily = selectedFont;
-        document.querySelectorAll('input[type="text"], select').forEach(input => {
-          input.style.fontFamily = selectedFont;
-        });
-        updateButtonText();
-      }
-    });
-
+    // Show the popup when login is clicked
     document.getElementById('loginLink').addEventListener('click', function(event) {
       event.preventDefault();
       document.getElementById('loginPopup').style.display = 'flex';
     });
 
+    // Close the popup
     document.getElementById('closeBtn').addEventListener('click', function() {
       document.getElementById('loginPopup').style.display = 'none';
     });
 
+    // Close the popup if clicking outside of it
     window.addEventListener('click', function(event) {
       if (event.target === document.getElementById('loginPopup')) {
         document.getElementById('loginPopup').style.display = 'none';
       }
     });
 
+    // Navigate to second_page.html on login
     document.getElementById('loginButton').addEventListener('click', function() {
-      window.location.href = 'second_webpage.html';
+      window.location.href = 'homepage.html';
     });
+
+    document.getElementById('menuLink').addEventListener('click', function(event) {
+      event.preventDefault();
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      const isVisible = dropdownMenu.style.display === 'block';
+      
+      // Hide all dropdown menus
+      document.querySelectorAll('.dropdown-menu').forEach(menu => menu.style.display = 'none');
+      
+      // Toggle the clicked dropdown menu
+      dropdownMenu.style.display = isVisible ? 'none' : 'block';
+    });
+    
+    // Close the dropdown if clicking outside of it
+    window.addEventListener('click', function(event) {
+      if (!event.target.matches('#menuLink')) {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => menu.style.display = 'none');
+      }
+    });
+    
   </script>
-
+  
 </body>
 </html>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Existing Page</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Page 1 (Existing content) -->
-    <div class="page page-1">
-        <h1>Welcome to Page 1</h1>
-        <p>This is the content of the first page.</p>
-    </div>
 
-    <!-- Page 2 (New page) -->
-    <div class="page page-2">
-        <h1>Welcome to Page 2</h1>
-        <p>This is the content of the second page. Scroll down for more.</p>
-    </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById('menuButton');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+  
+      menuButton.addEventListener('click', () => {
+          // Toggle the display of the dropdown menu
+          if (dropdownMenu.style.display === 'block') {
+              dropdownMenu.style.display = 'none';
+          } else {
+              dropdownMenu.style.display = 'block';
+          }
+      });
+  
+      // Hide the dropdown menu if clicking outside
+      document.addEventListener('click', (event) => {
+          if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+              dropdownMenu.style.display = 'none';
+          }
+      });
+  });
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Your Website</p>
-    </footer>
-</body>
-</html>
 
+  let currentTestimonialIndex = 0;
+const testimonialsToShow = 4; // Number of testimonials to show at a time
+
+function slideTestimonials() {
+  const testimonials = document.querySelectorAll('.testimonial-tile');
+  const totalTestimonials = testimonials.length;
+
+  // Hide all testimonials
+  testimonials.forEach((tile) => {
+    tile.style.display = 'none';
+  });
+
+  // Show the next set of testimonials
+  for (let i = 0; i < testimonialsToShow; i++) {
+    const index = (currentTestimonialIndex + i) % totalTestimonials;
+    if (totalTestimonials > 0) {
+      testimonials[index].style.display = 'block';
+    }
+  }
+
+  // Update the index for the next slide
+  currentTestimonialIndex = (currentTestimonialIndex + testimonialsToShow) % totalTestimonials;
+}
+
+// Initialize the first set of testimonials as visible
+document.addEventListener('DOMContentLoaded', () => {
+  slideTestimonials(); // Show initial testimonials
+
+  // Set interval for automatic sliding
+  setInterval(slideTestimonials, 4000); // Change slides every 4 seconds
+});
+
+const slider = document.getElementById('slider');
+const sliderWrapper = document.querySelector('.slider-wrapper');
+const images = slider.getElementsByTagName('img');
+let currentIndex = 0;
+
+// Function to show the current set of images
+function showImages(index) {
+    sliderWrapper.style.transform = `translateX(-${index * (100 / 5)}%)`; // Move the slider
+}
+
+// Function to automatically switch images
+function autoSlide() {
+    currentIndex = (currentIndex + 1) % (images.length - 4); // Adjust for loop with 10 images
+    showImages(currentIndex);
+}
+
+// Start the automatic sliding every 5 seconds
+setInterval(autoSlide, 5000);
+
+
+  // Get the modal
+  var modal = document.getElementById("loginPopup");
+
+  // Get the login icon that opens the modal
+  var loginIcon = document.getElementById("loginIcon");
+
+  // Get the <span> element that closes the modal
+  var closeBtn = document.getElementById("closeBtn");
+
+  // When the user clicks on the login icon, open the modal
+  loginIcon.onclick = function(event) {
+      event.preventDefault(); // Prevent default anchor behavior
+      modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  closeBtn.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+  
+  // Function to show the appropriate GIF based on the time of day
+function showAppropriateGif() {
+  const now = new Date();
+  const hours = now.getHours();
+
+  // Show daytime GIF from 6 AM to 6 PM, otherwise show nighttime GIF
+  if (hours >= 6 && hours < 18) {
+      document.getElementById("daytimeGif").style.display = "block";
+      document.getElementById("nighttimeGif").style.display = "none";
+  } else {
+      document.getElementById("daytimeGif").style.display = "none";
+      document.getElementById("nighttimeGif").style.display = "block";
+  }
+}
+
+
+// JavaScript to Handle Popup Modal Display for SignUp
+
+document.getElementById('signUpBtn').addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent default link behavior
+  document.getElementById('SignupPopup').style.display = 'block'; // Show the popup
+});
+
+// Close the popup if clicking outside of it
+window.addEventListener('click', function(event) {
+  if (event.target === document.getElementById('SignupPopup')) {
+      document.getElementById('SignupPopup').style.display = 'none'; // Hide the popup
+  }
+});
+
+
+
+
+
+// Call the function to show the appropriate GIF
+showAppropriateGif();
+
+
+
+
+
+
+  </script>
+  
