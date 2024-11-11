@@ -1039,7 +1039,7 @@ footer a:hover {
     <img src="logo2.png" alt="Your Logo" style="height: 100px; left: 26px;">
     <nav>
         <!-- <a href="#" id="loginLink">Login</a> -->
-        <a href="#">Signup</a>
+        
         <div class="menu-container">
             <div class="menu-button" id="menuButton">
                 <div class="menu-icon">
@@ -1108,10 +1108,12 @@ footer a:hover {
             <i class="fas fa-user-plus"></i> <!-- Icon for Log in -->
             <div>Log in</div>
         </a>
-        <a href="signup.html" class="icon">
+        <!-- Sign Up Button -->
+          <a href="#" class="icon" id="signUpBtn">
             <i class="fas fa-user-plus"></i> <!-- Icon for Sign Up -->
             <div>Sign Up</div>
-        </a>
+          </a>
+
       </div>
 
         <!-- Image Slider -->
@@ -1207,7 +1209,7 @@ footer a:hover {
               <p>"I had a great time using this service. Highly efficient and very reliable!"</p>
             </div>
           </div>
-          <!-- Removed the arrow here -->
+          <!-- Removed the arrow from here -->
         </div>
       </div>
     </div>
@@ -1228,7 +1230,7 @@ footer a:hover {
 </footer>
 
 
- <!-- Popup Modal -->
+ <!-- Popup Modal for Login-->
 <div id="loginPopup" class="popup" role="dialog" aria-labelledby="loginTitle" aria-modal="true">
   <div class="popup-content">
       <div class="popup-grey">
@@ -1251,13 +1253,39 @@ footer a:hover {
               <button type="submit" class="login-button">Login</button>
           </form>
           
-            <p>By continuing, you agree to our terms and conditions.</p>
+            <p>By continuing, you agree to our <a href="terms.html" target="_blank">terms and conditions</a>.</p>
           </div>
       </div>
   </div>
 </div>
 
-
+<!-- Popup Modal for SignUp -->
+<div id="SignupPopup" class="popup" role="dialog" aria-labelledby="loginTitle" aria-modal="true" style="display: none;">
+  <div class="popup-content">
+      <div class="popup-grey">
+        <div class="icon-container">
+          <i class="fas fa-home icon"></i>
+      </div>
+          <ul>
+              <li><i class="fas fa-check"></i> Zero brokerage</li>
+              <li><i class="fas fa-check"></i> Thousands of new listings daily</li>
+              <li><i class="fas fa-check"></i> 100 Cr+ brokerage saved</li>
+          </ul>
+      </div>
+      <div class="popup-white">
+          <div class="login-container">
+              <h1 id="loginTitle">Sign Up</h1>
+              <p><strong>Enter e-mail to continue</strong></p>
+              <form id="loginForm" action="homepage.html" method="GET">
+                  <label for="email" class="sr-only">Email</label>
+                  <input type="email" id="email" name="email" placeholder="Enter email here..." required>
+                  <button type="submit" class="login-button">Login</button>
+              </form>
+                <p>By continuing, you agree to our <a href="terms.html" target="_blank">terms and conditions</a>.</p>
+          </div>
+      </div>
+  </div>
+</div>
 
 
 
@@ -1427,8 +1455,31 @@ function showAppropriateGif() {
   }
 }
 
+
+// JavaScript to Handle Popup Modal Display for SignUp
+
+document.getElementById('signUpBtn').addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent default link behavior
+  document.getElementById('SignupPopup').style.display = 'block'; // Show the popup
+});
+
+// Close the popup if clicking outside of it
+window.addEventListener('click', function(event) {
+  if (event.target === document.getElementById('SignupPopup')) {
+      document.getElementById('SignupPopup').style.display = 'none'; // Hide the popup
+  }
+});
+
+
+
+
+
 // Call the function to show the appropriate GIF
 showAppropriateGif();
+
+
+
+
 
 
   </script>
