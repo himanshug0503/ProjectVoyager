@@ -61,14 +61,22 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-image: url('image34.jpg'); /* Replace with your page background image */
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
       height: 100vh; /* Full viewport height */
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden; /* Ensures the video doesn't cause scrollbars */
+      position: relative;
+  }
+  
+  .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the video covers the entire screen */
+      z-index: -1; /* Ensures the video stays in the background */
   }
 
     .form-container {
@@ -1068,6 +1076,10 @@ footer a:hover {
 
   <!-- Page Container -->
   <div class="page-1">
+    <video class="video-background" autoplay loop muted>
+      <source src="your-video2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
     <div class="center-box">
     <!-- Page 1 (First Page) -->
     <!-- Logo in the top right corner -->
@@ -1101,7 +1113,7 @@ footer a:hover {
               <i class="fas fa-users"></i>
               <div>Friends</div>
           </a>
-          <a href="favorites.html" class="icon">
+          <a href="./Image_Carousal/Favorites.html" class="icon">
               <i class="fas fa-star"></i>
               <div>Favorites</div>
           </a>
